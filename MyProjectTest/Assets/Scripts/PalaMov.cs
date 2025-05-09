@@ -22,7 +22,7 @@ public class PalaMov : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -59,6 +59,18 @@ public class PalaMov : MonoBehaviour
         else if (state == State.right && newX < limit)
         {
             transform.Translate(moveSpeed, 0, 0);
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Augmentar"))
+        {
+            Vector3 scale = transform.localScale;
+            scale.x += scaleChange;
+            transform.localScale = scale;
+
+            Destroy(other.gameObject);
         }
     }
 }
