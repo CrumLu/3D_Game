@@ -2,23 +2,16 @@ using UnityEngine;
 
 public class BrickMov : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject powerUpPrefab;
 
     private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ball"))
         {
-            Destroy(gameObject);
+            if (collision.gameObject.CompareTag("Ball"))
+            {
+                // Apareix el power-up amb una probabilitat, o sempre
+                Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
+
+                Destroy(gameObject);
+            }
         }
-    }
 }

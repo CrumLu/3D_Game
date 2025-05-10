@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BallMov : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 8f;
     private Rigidbody rb;
 
     void Start()

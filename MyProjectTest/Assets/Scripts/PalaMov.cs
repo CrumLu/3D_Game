@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PalaMov : MonoBehaviour
 {
-    public float scaleChange = 0.5f;
+    public float scaleChange = 1f; //POWER-UP de augmentar
     public GameObject ball; // assigna la pilota manualment al inspector
 
     public KeyCode left;
