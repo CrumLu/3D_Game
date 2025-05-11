@@ -9,6 +9,7 @@ TagManager:
   - Augmentar
   - PowerBall
   - Brick
+  - ExtraBall
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ball
   - 
   - 
   - 

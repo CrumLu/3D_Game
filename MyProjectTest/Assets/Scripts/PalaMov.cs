@@ -14,6 +14,7 @@ public class PalaMov : MonoBehaviour
     private float originalSize;
     private Coroutine revertCoroutine;
 
+
     enum State
     {
         left,
@@ -73,11 +74,11 @@ public class PalaMov : MonoBehaviour
             scale.x += scaleChange;
             transform.localScale = scale;
 
-            // Recalcula límit màxim basat en el nou tamany
+            // Recalcula lï¿½mit mï¿½xim basat en el nou tamany
             size = scale.x;
             float limit = 8f - size / 2f;
 
-            // Limita la posició actual
+            // Limita la posiciï¿½ actual
             float clampedX = Mathf.Clamp(transform.position.x, -limit, limit);
             transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
 
@@ -101,8 +102,51 @@ public class PalaMov : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+        else if (other.CompareTag("ExtraBall"))
+        {
+            GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
+
+            foreach (GameObject b in balls)
+            {
+                Rigidbody rb = b.GetComponent<Rigidbody>();
+                BallMov ballMov = b.GetComponent<BallMov>();
+
+                if (rb != null && ballMov != null)
+                {
+                    Vector3 dir = rb.linearVelocity.normalized;
+                    float speed = ballMov.speed;
+
+                    // Crea dues noves boles amb angles diferents
+                    //CreateExtraBall(b.transform.position, Quaternion.Euler(0, 0, 0) * dir, speed);
+                    CreateExtraBall(b.transform.position, Quaternion.Euler(0, 20, 0) * dir, speed);
+                    CreateExtraBall(b.transform.position, Quaternion.Euler(0, -20, 0) * dir, speed);
+                }
+            }
+
+            Destroy(other.gameObject);
+        }
     }
 
+    void CreateExtraBall(Vector3 position, Vector3 direction, float speed)
+    {
+        GameObject newBall = Instantiate(ball, position, Quaternion.identity);
+        Rigidbody rb = newBall.GetComponent<Rigidbody>();
+        BallMov ballMov = newBall.GetComponent<BallMov>();
+
+        if (rb != null && ballMov != null)
+        {
+            rb.linearVelocity = direction.normalized * speed;
+
+            // Si la bola clonada estï¿½ en mode PowerBall, li traslladem aquest estat
+            if (ballMov.powerBallMaterial != null && ballMov.normalMaterial != null)
+            {
+                ballMov.isPowerBall = false;
+                newBall.GetComponent<Renderer>().material = ballMov.normalMaterial;
+            }
+        }
+    }
+
+    // Temporitzador
     IEnumerator RevertAfterTime(float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -111,7 +155,7 @@ public class PalaMov : MonoBehaviour
         scale.x = originalSize;
         transform.localScale = scale;
 
-        // Reajusta posició si cal
+        // Reajusta posiciï¿½ si cal
         float limit = 8f - originalSize / 2f;
         float clampedX = Mathf.Clamp(transform.position.x, -limit, limit);
         transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
