@@ -14,12 +14,45 @@ public class BallMov : MonoBehaviour
     public Material powerBallMaterial;
     public Material normalMaterial;
 
+    //Ball enganxada a la Pala
+    private bool isLaunched = false;
+    private Transform palaTransform;
+    private Vector3 offsetToPala = new Vector3(0, 0, 1.0f); // ajustable segons la mida
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        int directionZ = Random.Range(0, 2) == 0 ? 1 : -1;
-        rb.linearVelocity = new Vector3(0, 0, speed * directionZ);
+
+        GameObject pala = GameObject.FindGameObjectWithTag("Pala");
+        if (pala != null)
+        {
+            palaTransform = pala.transform;
+            rb.linearVelocity = Vector3.zero;
+            isLaunched = false;
+        }
+        else
+        {
+            Debug.LogError("No s'ha trobat cap objecte amb tag 'Pala'");
+        }
     }
+
+    void Update()
+    {
+        if (!isLaunched && palaTransform != null)
+        {
+            // Mantenir la pilota enganxada a la pala
+            transform.position = palaTransform.position + offsetToPala;
+
+            // Esperar tecla espai per llançar
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rb.linearVelocity = new Vector3(-1, 0, 1).normalized * speed;
+                isLaunched = true;
+            }
+        }
+    }
+
+
 
     private void FixedUpdate()
     {
