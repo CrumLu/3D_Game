@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 4872375994823745841}
   - component: {fileID: 2773727878705036988}
   m_Layer: 0
-  m_Name: Augmentar
-  m_TagString: Augmentar
+  m_Name: PowerBall
+  m_TagString: PowerBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
