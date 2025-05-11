@@ -1,14 +1,18 @@
+using System.Collections;
 using UnityEngine;
 
 public class PalaMov : MonoBehaviour
 {
-    public float scaleChange = 0.5f;
+    public float scaleChange = 5.0f; //POWER-UP de augmentar
     public GameObject ball; // assigna la pilota manualment al inspector
 
     public KeyCode left;
     public KeyCode right;
 
     public float size;
+
+    private float originalSize;
+    private Coroutine revertCoroutine;
 
     enum State
     {
@@ -19,13 +23,11 @@ public class PalaMov : MonoBehaviour
 
     State state;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        originalSize = transform.localScale.x;
     }
 
-    // Update is called once per frame
     void Update()
     {
         size = transform.localScale.x;
@@ -60,5 +62,60 @@ public class PalaMov : MonoBehaviour
         {
             transform.Translate(moveSpeed, 0, 0);
         }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Augmentar"))
+        {
+            // Augmenta escala
+            Vector3 scale = transform.localScale;
+            scale.x += scaleChange;
+            transform.localScale = scale;
+
+            // Recalcula límit màxim basat en el nou tamany
+            size = scale.x;
+            float limit = 8f - size / 2f;
+
+            // Limita la posició actual
+            float clampedX = Mathf.Clamp(transform.position.x, -limit, limit);
+            transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
+
+            // Reinicia el temporitzador si ja hi ha un actiu
+            if (revertCoroutine != null)
+            {
+                StopCoroutine(revertCoroutine);
+            }
+            revertCoroutine = StartCoroutine(RevertAfterTime(5f)); // 5 segons
+
+            Destroy(other.gameObject);
+        }
+        else if (other.CompareTag("PowerBall"))
+        {
+            BallMov ballScript = ball.GetComponent<BallMov>();
+            if (ballScript != null)
+            {
+                ballScript.ActivatePowerBall();
+            }
+
+            Destroy(other.gameObject);
+        }
+
+    }
+
+    IEnumerator RevertAfterTime(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        Vector3 scale = transform.localScale;
+        scale.x = originalSize;
+        transform.localScale = scale;
+
+        // Reajusta posició si cal
+        float limit = 8f - originalSize / 2f;
+        float clampedX = Mathf.Clamp(transform.position.x, -limit, limit);
+        transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
+
+        size = originalSize;
     }
 }

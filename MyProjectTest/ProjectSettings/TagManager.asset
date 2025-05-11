@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ball
   - Pala
+  - Augmentar
+  - PowerBall
+  - Brick
   layers:
   - Default
   - TransparentFX

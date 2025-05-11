@@ -2,23 +2,33 @@ using UnityEngine;
 
 public class BrickMov : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject powerUpPrefab; // només un prefab a assignar
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
+            // Si té assignat un power-up, l’instancia
+            if (powerUpPrefab != null)
+            {
+                Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
+            }
+
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Ball"))
+        {
+            // Si la pilota entra (en mode PowerBall), destruïm el brick
+            if (powerUpPrefab != null)
+            {
+                Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
+            }
+            Destroy(gameObject);
+        }
+    }
+
 }
