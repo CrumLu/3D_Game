@@ -111,6 +111,8 @@ public class PalaMov : MonoBehaviour
                 Rigidbody rb = b.GetComponent<Rigidbody>();
                 BallMov ballMov = b.GetComponent<BallMov>();
 
+                bool isPowerBall = ballMov.isPowerBall;
+
                 if (rb != null && ballMov != null)
                 {
                     Vector3 dir = rb.linearVelocity.normalized;
@@ -118,16 +120,33 @@ public class PalaMov : MonoBehaviour
 
                     // Crea dues noves boles amb angles diferents
                     //CreateExtraBall(b.transform.position, Quaternion.Euler(0, 0, 0) * dir, speed);
-                    CreateExtraBall(b.transform.position, Quaternion.Euler(0, 20, 0) * dir, speed);
-                    CreateExtraBall(b.transform.position, Quaternion.Euler(0, -20, 0) * dir, speed);
+                    CreateExtraBall(b.transform.position, Quaternion.Euler(0, 20, 0) * dir, speed, isPowerBall);
+                    CreateExtraBall(b.transform.position, Quaternion.Euler(0, -20, 0) * dir, speed, isPowerBall);
                 }
             }
 
             Destroy(other.gameObject);
         }
+        else if (other.CompareTag("Imant"))
+        {
+            GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
+
+            foreach (GameObject b in balls)
+            {
+                BallMov ballScript = b.GetComponent<BallMov>();
+                if (ballScript != null)
+                {
+                    Vector3 hitPoint = b.transform.position;
+                    ballScript.ActivateImant(hitPoint);
+                }
+            }
+
+            Destroy(other.gameObject);
+        }
+
     }
 
-    void CreateExtraBall(Vector3 position, Vector3 direction, float speed)
+    void CreateExtraBall(Vector3 position, Vector3 direction, float speed, bool isPowerBall)
     {
         GameObject newBall = Instantiate(ball, position, Quaternion.identity);
         Rigidbody rb = newBall.GetComponent<Rigidbody>();
@@ -135,14 +154,15 @@ public class PalaMov : MonoBehaviour
 
         if (rb != null && ballMov != null)
         {
+            //ballMov.startLaunched = true;
+            ballMov.isPowerBall = isPowerBall;
+            ballMov.isExtraBall = true; // per evitar que es quedi enganxada a la pala
+            ballMov.originPosition = position;
+
             rb.linearVelocity = direction.normalized * speed;
 
-            // Si la bola clonada est� en mode PowerBall, li traslladem aquest estat
-            if (ballMov.powerBallMaterial != null && ballMov.normalMaterial != null)
-            {
-                ballMov.isPowerBall = false;
-                newBall.GetComponent<Renderer>().material = ballMov.normalMaterial;
-            }
+            if (!isPowerBall) newBall.GetComponent<Renderer>().material = ballMov.normalMaterial;
+            else newBall.GetComponent<Renderer>().material = ballMov.powerBallMaterial;
         }
     }
 
