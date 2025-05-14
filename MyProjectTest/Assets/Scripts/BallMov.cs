@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class BallMov : MonoBehaviour
 {
+    // Variables de imant
+    public bool isImant = false;
+    private Vector3 imantOffset;
+
+    // Variables de ExtaBall
+    public bool isExtraBall = false; // si és true, no es queda enganxada a la pala
+    public Vector3 originPosition;
+
     // Variables de moviment
     public float speed = 5.0f;
     private Rigidbody rb;
@@ -17,7 +25,7 @@ public class BallMov : MonoBehaviour
     //Ball enganxada a la Pala
     private bool isLaunched = false;
     private Transform palaTransform;
-    private Vector3 offsetToPala = new Vector3(0, 0, 1.0f); // ajustable segons la mida
+    private Vector3 offsetToPala = new Vector3(0, 0, 0.75f); // ajustable segons la mida
 
     void Start()
     {
@@ -28,7 +36,7 @@ public class BallMov : MonoBehaviour
         {
             palaTransform = pala.transform;
             rb.linearVelocity = Vector3.zero;
-            isLaunched = false;
+            //isLaunched = startLaunched; // només estarà a false per la primera bola
         }
         else
         {
@@ -40,24 +48,56 @@ public class BallMov : MonoBehaviour
     {
         if (!isLaunched && palaTransform != null)
         {
-            // Mantenir la pilota enganxada a la pala
-            transform.position = palaTransform.position + offsetToPala;
-
-            // Esperar tecla espai per llançar
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (!isExtraBall)
             {
-                rb.linearVelocity = new Vector3(-1, 0, 1).normalized * speed;
-                isLaunched = true;
+                if (isImant)
+                {
+                    transform.position = palaTransform.position + imantOffset;
+                }
+                else
+                {
+                    transform.position = palaTransform.position + offsetToPala;
+                }
             }
+
+            if (Input.GetKeyDown(KeyCode.Space) || isExtraBall)
+            {
+                if (isImant)
+                {
+                    float offset = imantOffset.x;
+                    float width = 2f; // ajustable segons la mida real de la pala
+                    float normalizedOffset = Mathf.Clamp(offset / (width / 2f), -1f, 1f);
+                    Vector3 dir = new Vector3(normalizedOffset, 0, 1).normalized;
+                    rb.linearVelocity = dir * speed;
+                }
+                else if (isExtraBall)
+                {
+                    float x = Random.Range(-1f, 1f);
+                    float z = Random.Range(0.5f, 1f);
+                    Vector3 randomDir = new Vector3(x, 0, z).normalized;
+                    rb.linearVelocity = randomDir * speed;
+                }
+                else
+                {
+                    rb.linearVelocity = new Vector3(-1, 0, 1).normalized * speed;
+                }
+
+                isLaunched = true;
+                isImant = false;
+            }
+
         }
     }
 
 
-
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        rb.linearVelocity = rb.linearVelocity.normalized * speed;
+        if (isLaunched)
+        {
+            rb.linearVelocity = rb.linearVelocity.normalized * speed;
+        }
     }
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -89,39 +129,61 @@ public class BallMov : MonoBehaviour
 
     IEnumerator PowerBallDuration()
     {
-        isPowerBall = true;
+        // 🔁 Activa PowerBall a totes les boles
+        GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
+        foreach (GameObject b in balls)
+        {
+            BallMov ball = b.GetComponent<BallMov>();
+            if (ball != null)
+            {
+                ball.isPowerBall = true;
+                if (ball.powerBallMaterial != null)
+                    b.GetComponent<Renderer>().material = ball.powerBallMaterial;
+            }
+        }
 
-        // Canvia al material del POWERBALL
-        if (powerBallMaterial != null) GetComponent<Renderer>().material = powerBallMaterial;
-
-        // Converteix tots els bricks en triggers
+        // 🔁 Converteix bricks a triggers
         GameObject[] bricks = GameObject.FindGameObjectsWithTag("Brick");
         foreach (GameObject brick in bricks)
         {
             Collider col = brick.GetComponent<Collider>();
             if (col != null)
-            {
                 col.isTrigger = true;
+        }
+
+        yield return new WaitForSeconds(5f);
+
+        // 🔁 Desactiva PowerBall a totes les boles
+        balls = GameObject.FindGameObjectsWithTag("Ball");
+        foreach (GameObject b in balls)
+        {
+            BallMov ball = b.GetComponent<BallMov>();
+            if (ball != null)
+            {
+                ball.isPowerBall = false;
+                if (ball.normalMaterial != null)
+                    b.GetComponent<Renderer>().material = ball.normalMaterial;
             }
         }
 
-        yield return new WaitForSeconds(5f); // el temps que dura el POWERBALL
-
-        isPowerBall = false;
-
-        // Restaura el material normal
-        if (normalMaterial != null)
-            GetComponent<Renderer>().material = normalMaterial;
-
-        // Torna els bricks restants a col·lisors normals
+        // 🔁 Torna els bricks a col·lisions normals
         bricks = GameObject.FindGameObjectsWithTag("Brick");
         foreach (GameObject brick in bricks)
         {
             Collider col = brick.GetComponent<Collider>();
             if (col != null)
-            {
                 col.isTrigger = false;
-            }
         }
     }
+
+    public void ActivateImant(Vector3 collisionPoint)
+    {
+        isLaunched = false;
+        isImant = true;
+        rb.linearVelocity = Vector3.zero;
+
+        if (palaTransform != null)
+            imantOffset = collisionPoint - palaTransform.position;
+    }
+
 }

@@ -10,6 +10,7 @@ TagManager:
   - PowerBall
   - Brick
   - ExtraBall
+  - Imant
   layers:
   - Default
   - TransparentFX
