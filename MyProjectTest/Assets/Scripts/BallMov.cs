@@ -7,6 +7,7 @@ public class BallMov : MonoBehaviour
     // Variables de imant
     public bool isImant = false;
     private Vector3 imantOffset;
+    private bool siguePala = false;
 
     // Variables de ExtaBall
     public bool isExtraBall = false; // si és true, no es queda enganxada a la pala
@@ -17,6 +18,7 @@ public class BallMov : MonoBehaviour
     private Rigidbody rb;
 
     // Variables del POWERBALL
+    public bool normalBall = false;
     private Coroutine powerBallCoroutine;
     public bool isPowerBall = false;
     public Material powerBallMaterial;
@@ -50,27 +52,12 @@ public class BallMov : MonoBehaviour
         {
             if (!isExtraBall)
             {
-                if (isImant)
-                {
-                    transform.position = palaTransform.position + imantOffset;
-                }
-                else
-                {
-                    transform.position = palaTransform.position + offsetToPala;
-                }
+                transform.position = palaTransform.position + offsetToPala; 
             }
 
             if (Input.GetKeyDown(KeyCode.Space) || isExtraBall)
             {
-                if (isImant)
-                {
-                    float offset = imantOffset.x;
-                    float width = 2f; // ajustable segons la mida real de la pala
-                    float normalizedOffset = Mathf.Clamp(offset / (width / 2f), -1f, 1f);
-                    Vector3 dir = new Vector3(normalizedOffset, 0, 1).normalized;
-                    rb.linearVelocity = dir * speed;
-                }
-                else if (isExtraBall)
+                if (isExtraBall)
                 {
                     float x = Random.Range(-1f, 1f);
                     float z = Random.Range(0.5f, 1f);
@@ -83,9 +70,29 @@ public class BallMov : MonoBehaviour
                 }
 
                 isLaunched = true;
-                isImant = false;
+                //isImant = true;
             }
+        }
+        // Si la bola és imant, s'enganxa a la pala
+        if (siguePala)
+        {
+            transform.position = palaTransform.position + imantOffset;
 
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (isExtraBall)
+                {
+                    float x = Random.Range(-1f, 1f);
+                    float z = Random.Range(0.5f, 1f);
+                    Vector3 randomDir = new Vector3(x, 0, z).normalized;
+                    rb.linearVelocity = randomDir * speed;
+                }
+                else
+                {
+                    rb.linearVelocity = new Vector3(-1, 0, 1).normalized * speed;
+                }
+                siguePala = false; // Deixa de seguir la pala
+            }
         }
     }
 
@@ -103,17 +110,27 @@ public class BallMov : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Pala"))
         {
-            Vector3 hitPoint = collision.contacts[0].point;
-            Vector3 palaCenter = collision.transform.position;
+            if (isImant)
+            {
+                Vector3 hitPoint = collision.GetContact(0).point;
+                imantOffset = hitPoint - palaTransform.position;
+                siguePala = true;
 
-            float offset = hitPoint.x - palaCenter.x;
-            float width = collision.collider.bounds.size.x;
+            }
+            else
+            {
+                // Rebot normal si no és Imant
+                Vector3 hit = collision.contacts[0].point;
+                Vector3 palaCenter = collision.transform.position;
+                float offset = hit.x - palaCenter.x;
+                float width = collision.collider.bounds.size.x;
+                float normalizedOffset = offset / (width / 2);
 
-            float normalizedOffset = offset / (width / 2);
-            Vector3 newDir = new Vector3(normalizedOffset, 0, 1).normalized;
-
-            rb.linearVelocity = newDir * speed;
+                Vector3 newDir = new Vector3(normalizedOffset, 0, 1).normalized;
+                rb.linearVelocity = newDir * speed;
+            }
         }
+
     }
 
     //Gestión del POWERBALL
@@ -176,14 +193,11 @@ public class BallMov : MonoBehaviour
         }
     }
 
-    public void ActivateImant(Vector3 collisionPoint)
+    public void ActivateImant()
     {
-        isLaunched = false;
+        //isLaunched = false;
         isImant = true;
-        rb.linearVelocity = Vector3.zero;
-
-        if (palaTransform != null)
-            imantOffset = collisionPoint - palaTransform.position;
+        //rb.linearVelocity = Vector3.zero;
     }
 
 }

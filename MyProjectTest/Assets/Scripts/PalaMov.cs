@@ -112,6 +112,7 @@ public class PalaMov : MonoBehaviour
                 BallMov ballMov = b.GetComponent<BallMov>();
 
                 bool isPowerBall = ballMov.isPowerBall;
+                bool isIman = ballMov.isImant;
 
                 if (rb != null && ballMov != null)
                 {
@@ -120,8 +121,8 @@ public class PalaMov : MonoBehaviour
 
                     // Crea dues noves boles amb angles diferents
                     //CreateExtraBall(b.transform.position, Quaternion.Euler(0, 0, 0) * dir, speed);
-                    CreateExtraBall(b.transform.position, Quaternion.Euler(0, 20, 0) * dir, speed, isPowerBall);
-                    CreateExtraBall(b.transform.position, Quaternion.Euler(0, -20, 0) * dir, speed, isPowerBall);
+                    CreateExtraBall(b.transform.position, Quaternion.Euler(0, 20, 0) * dir, speed, isPowerBall, isIman);
+                    CreateExtraBall(b.transform.position, Quaternion.Euler(0, -20, 0) * dir, speed, isPowerBall, isIman);
                 }
             }
 
@@ -136,17 +137,30 @@ public class PalaMov : MonoBehaviour
                 BallMov ballScript = b.GetComponent<BallMov>();
                 if (ballScript != null)
                 {
-                    Vector3 hitPoint = b.transform.position;
-                    ballScript.ActivateImant(hitPoint);
+                    ballScript.ActivateImant();
                 }
             }
 
             Destroy(other.gameObject);
         }
+        else if (other.CompareTag("NormalBall"))
+        {
+            GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
 
+            foreach (GameObject b in balls)
+            {
+                BallMov ballScript = b.GetComponent<BallMov>();
+                if (ballScript != null)
+                {
+                    ballScript.normalBall = true;
+                }
+
+            }
+            Destroy(other.gameObject);
+        }
     }
 
-    void CreateExtraBall(Vector3 position, Vector3 direction, float speed, bool isPowerBall)
+    void CreateExtraBall(Vector3 position, Vector3 direction, float speed, bool isPowerBall, bool isIman)
     {
         GameObject newBall = Instantiate(ball, position, Quaternion.identity);
         Rigidbody rb = newBall.GetComponent<Rigidbody>();
@@ -158,6 +172,7 @@ public class PalaMov : MonoBehaviour
             ballMov.isPowerBall = isPowerBall;
             ballMov.isExtraBall = true; // per evitar que es quedi enganxada a la pala
             ballMov.originPosition = position;
+            ballMov.isImant = isIman;
 
             rb.linearVelocity = direction.normalized * speed;
 

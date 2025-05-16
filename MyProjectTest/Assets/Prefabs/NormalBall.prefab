@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 4872375994823745841}
   - component: {fileID: 2773727878705036988}
   m_Layer: 0
-  m_Name: Imant
-  m_TagString: Imant
+  m_Name: NormalBall
+  m_TagString: NormalBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3f20042c3098f964c84679055dbcc389, type: 2}
+  - {fileID: 2100000, guid: ddac6def4d21f8f459ad1e65c93a0656, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
