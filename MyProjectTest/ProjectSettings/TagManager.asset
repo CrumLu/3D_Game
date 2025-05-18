@@ -12,6 +12,9 @@ TagManager:
   - ExtraBall
   - Imant
   - NormalBall
+  - Disminuir
+  - FastBall
+  - SlowBall
   layers:
   - Default
   - TransparentFX

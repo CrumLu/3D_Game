@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PalaMov : MonoBehaviour
 {
-    public float scaleChange = 5.0f; //POWER-UP de augmentar
+    public float scaleChange = 3.0f; //POWER-UP de augmentar
     public GameObject ball; // assigna la pilota manualment al inspector
 
     public KeyCode left;
@@ -82,14 +82,24 @@ public class PalaMov : MonoBehaviour
             float clampedX = Mathf.Clamp(transform.position.x, -limit, limit);
             transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
 
-            // Reinicia el temporitzador si ja hi ha un actiu
-            if (revertCoroutine != null)
-            {
-                StopCoroutine(revertCoroutine);
-            }
-            revertCoroutine = StartCoroutine(RevertAfterTime(5f)); // 5 segons
+            Destroy(other.gameObject);
+
+        }
+        else if (other.CompareTag("Disminuir"))
+        {
+            // Disminueix escala
+            Vector3 scale = transform.localScale;
+            scale.x -= scaleChange;
+            transform.localScale = scale;
+            // Recalcula l�mit m�xim basat en el nou tamany
+            size = scale.x;
+            float limit = 8f - size / 2f;
+            // Limita la posici� actual
+            float clampedX = Mathf.Clamp(transform.position.x, -limit, limit);
+            transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
 
             Destroy(other.gameObject);
+
         }
         else if (other.CompareTag("PowerBall"))
         {
@@ -152,12 +162,45 @@ public class PalaMov : MonoBehaviour
                 BallMov ballScript = b.GetComponent<BallMov>();
                 if (ballScript != null)
                 {
+                    ballScript.DeactivatePowerBall(); // Nova línia
                     ballScript.normalBall = true;
                 }
+            }
 
+            Destroy(other.gameObject);
+        }
+
+        // MILLORAR AMB EXTRA BALL I TOT
+        else if (other.CompareTag("FastBall"))
+        {
+            GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
+            foreach (GameObject b in balls)
+            {
+                BallMov ballScript = b.GetComponent<BallMov>();
+                if (ballScript != null)
+                {
+                    ballScript.ActivateFastBall();
+                }
             }
             Destroy(other.gameObject);
         }
+
+        else if (other.CompareTag("SlowBall"))
+        {
+            GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
+
+            foreach (GameObject b in balls)
+            {
+                BallMov ballScript = b.GetComponent<BallMov>();
+                if (ballScript != null)
+                {
+                    ballScript.ActivateSlowBall();
+                }
+            }
+
+            Destroy(other.gameObject);
+        }
+
     }
 
     void CreateExtraBall(Vector3 position, Vector3 direction, float speed, bool isPowerBall, bool isIman)
@@ -179,22 +222,5 @@ public class PalaMov : MonoBehaviour
             if (!isPowerBall) newBall.GetComponent<Renderer>().material = ballMov.normalMaterial;
             else newBall.GetComponent<Renderer>().material = ballMov.powerBallMaterial;
         }
-    }
-
-    // Temporitzador
-    IEnumerator RevertAfterTime(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-
-        Vector3 scale = transform.localScale;
-        scale.x = originalSize;
-        transform.localScale = scale;
-
-        // Reajusta posici� si cal
-        float limit = 8f - originalSize / 2f;
-        float clampedX = Mathf.Clamp(transform.position.x, -limit, limit);
-        transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
-
-        size = originalSize;
     }
 }
