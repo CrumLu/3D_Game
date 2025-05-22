@@ -125,36 +125,66 @@ public class BallMov : MonoBehaviour
     {
         if (isLaunched)
         {
-            rb.linearVelocity = rb.linearVelocity.normalized * speed;
+            Vector3 dir = rb.linearVelocity.normalized;
+
+            // Aplica correcció suau
+            dir = EnforceMinRebound(dir, 0.2f, 0.2f, 0.7f);
+            rb.linearVelocity = dir * speed;
         }
     }
 
 
+
+
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Pala"))
+        if (isLaunched)
         {
-            if (isImant)
+            if (collision.gameObject.CompareTag("Pala"))
             {
-                Vector3 hitPoint = collision.GetContact(0).point;
-                imantOffset = hitPoint - palaTransform.position;
-                siguePala = true;
+                if (isImant)
+                {
+                    Vector3 hitPoint = collision.GetContact(0).point;
+                    imantOffset = hitPoint - palaTransform.position;
+                    siguePala = true;
 
+                }
+                else
+                {
+                    // Rebot normal si no és Imant
+                    Vector3 hit = collision.contacts[0].point;
+                    Vector3 palaCenter = collision.transform.position;
+                    float offset = hit.x - palaCenter.x;
+                    float width = collision.collider.bounds.size.x;
+                    float normalizedOffset = offset / (width / 2);
+
+                    Vector3 newDir = new Vector3(normalizedOffset, 0, 1).normalized;
+                    newDir = EnforceMinRebound(newDir, 0.2f, 0.2f, 0.6f);
+                    rb.linearVelocity = newDir * speed;
+                }
             }
-            else
+            else if (collision.gameObject.CompareTag("Paret"))
             {
-                // Rebot normal si no és Imant
-                Vector3 hit = collision.contacts[0].point;
-                Vector3 palaCenter = collision.transform.position;
-                float offset = hit.x - palaCenter.x;
-                float width = collision.collider.bounds.size.x;
-                float normalizedOffset = offset / (width / 2);
+                Vector3 velocity = rb.linearVelocity;
 
-                Vector3 newDir = new Vector3(normalizedOffset, 0, 1).normalized;
-                rb.linearVelocity = newDir * speed;
+                // Si la pilota gairebé no té component Z (massa horitzontal)
+                if (Mathf.Abs(velocity.z) < 1f)
+                {
+                    Debug.Log(">> Direcció horitzontal detectada. Correcció aplicada.");
+                   
+                    Vector3 hit = collision.contacts[0].point;
+                    Vector3 palaCenter = collision.transform.position;
+                    float offset = hit.x - palaCenter.x;
+                    float width = collision.collider.bounds.size.x;
+                    float normalizedOffset = offset / (width / 2);
+
+                    Vector3 newDir = new Vector3(normalizedOffset, 0, 1).normalized;
+                    newDir = EnforceMinRebound(newDir, 0.2f, 0.2f, 0.6f);
+                    rb.linearVelocity = newDir * speed;
+                }
             }
+
         }
-
     }
 
     //Gestión del POWERBALL
@@ -308,5 +338,20 @@ public class BallMov : MonoBehaviour
 
         speed = baseSpeed;
     }
+
+    private Vector3 EnforceMinRebound(Vector3 dir, float minX, float minZ, float blendFactor)
+    {
+        Vector3 corrected = dir;
+
+        if (Mathf.Abs(corrected.z) < minZ)
+            corrected.z = minZ * Mathf.Sign(Random.Range(-1f, 1f));
+
+        if (Mathf.Abs(corrected.x) < minX)
+            corrected.x = minX * Mathf.Sign(Random.Range(-1f, 1f));
+
+        // Interpolació suau: només s'aplica una part del canvi
+        return Vector3.Slerp(dir, corrected.normalized, blendFactor).normalized;
+    }
+
 
 }

@@ -15,6 +15,7 @@ TagManager:
   - Disminuir
   - FastBall
   - SlowBall
+  - Paret
   layers:
   - Default
   - TransparentFX
