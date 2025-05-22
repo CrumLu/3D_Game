@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class BallMov : MonoBehaviour
 {
+    // Direccion de la Ball
+    public Vector3 direccion;
+    
+    private float collisionCooldown = 0.02f;  // Temps mínim entre col·lisions
+    private float lastCollisionTime = -1f;
+
+
     // Variables de SlowBall
     private Coroutine slowBallCoroutine;
     private float slowSpeed = 3f;
@@ -40,6 +47,7 @@ public class BallMov : MonoBehaviour
     private Transform palaTransform;
     private Vector3 offsetToPala = new Vector3(0, 0, 0.75f); // ajustable segons la mida
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -63,7 +71,7 @@ public class BallMov : MonoBehaviour
         {
             if (!isExtraBall)
             {
-                transform.position = palaTransform.position + offsetToPala; 
+                transform.position = palaTransform.position + offsetToPala;
             }
 
             if (Input.GetKeyDown(KeyCode.Space) || isExtraBall)
@@ -100,7 +108,7 @@ public class BallMov : MonoBehaviour
                 }
                 else
                 {
-                    
+
                     // Determina la direcció en funció de la posició relativa de la bola respecte a la pala
                     float offset = imantOffset.x;
 
@@ -113,7 +121,7 @@ public class BallMov : MonoBehaviour
                         newDir = new Vector3(0, 0, 1);
 
                     rb.linearVelocity = newDir.normalized * speed;
-                   
+
                 }
                 siguePala = false; // Deixa de seguir la pala
             }
@@ -125,13 +133,12 @@ public class BallMov : MonoBehaviour
     {
         if (isLaunched)
         {
-            Vector3 dir = rb.linearVelocity.normalized;
-
-            // Aplica correcció suau
-            dir = EnforceMinRebound(dir, 0.2f, 0.2f, 0.7f);
-            rb.linearVelocity = dir * speed;
+            direccion = rb.linearVelocity.normalized;
+            direccion = EnforceMinRebound(direccion, 0.2f, 0.2f, 0.7f);
+            rb.linearVelocity = direccion * speed;
         }
     }
+
 
 
 
@@ -140,18 +147,49 @@ public class BallMov : MonoBehaviour
     {
         if (isLaunched)
         {
-            if (collision.gameObject.CompareTag("Pala"))
+            if (collision.gameObject.CompareTag("Brick"))
+            {
+                // Gestió de cooldown per evitar dobles col·lisions
+                if (Time.time - lastCollisionTime < collisionCooldown)
+                {
+                    // Massa aviat després de l'última col·lisió; ignora aquesta
+                    return;
+                }
+
+                lastCollisionTime = Time.time; // Actualitza el temps de l'última col·lisió
+
+                if (isPowerBall)
+                {
+                    Destroy(collision.gameObject);
+                    rb.linearVelocity = direccion * speed;
+                    return;
+                }
+                else
+                {
+                    // Gestiona rebot normal
+                    ContactPoint contacto = collision.GetContact(0);
+                    Vector3 normal = contacto.normal;
+
+                    if (Mathf.Abs(normal.x) > Mathf.Abs(normal.z))
+                        direccion.x *= -1;
+                    else
+                        direccion.z *= -1;
+
+                    rb.linearVelocity = direccion * speed;
+
+                    Destroy(collision.gameObject);
+                }
+            }
+            else if (collision.gameObject.CompareTag("Pala"))
             {
                 if (isImant)
                 {
                     Vector3 hitPoint = collision.GetContact(0).point;
                     imantOffset = hitPoint - palaTransform.position;
                     siguePala = true;
-
                 }
                 else
                 {
-                    // Rebot normal si no és Imant
                     Vector3 hit = collision.contacts[0].point;
                     Vector3 palaCenter = collision.transform.position;
                     float offset = hit.x - palaCenter.x;
@@ -166,26 +204,24 @@ public class BallMov : MonoBehaviour
             else if (collision.gameObject.CompareTag("Paret"))
             {
                 Vector3 velocity = rb.linearVelocity;
-
-                // Si la pilota gairebé no té component Z (massa horitzontal)
                 if (Mathf.Abs(velocity.z) < 1f)
                 {
-                    Debug.Log(">> Direcció horitzontal detectada. Correcció aplicada.");
-                   
                     Vector3 hit = collision.contacts[0].point;
                     Vector3 palaCenter = collision.transform.position;
                     float offset = hit.x - palaCenter.x;
                     float width = collision.collider.bounds.size.x;
                     float normalizedOffset = offset / (width / 2);
 
-                    Vector3 newDir = new Vector3(normalizedOffset, 0, 1).normalized;
-                    newDir = EnforceMinRebound(newDir, 0.2f, 0.2f, 0.6f);
-                    rb.linearVelocity = newDir * speed;
+                    direccion = new Vector3(normalizedOffset, 0, 1).normalized;
+                    direccion = EnforceMinRebound(direccion, 0.2f, 0.2f, 0.6f);
+                    rb.linearVelocity = direccion * speed;
                 }
             }
-
         }
     }
+
+
+
 
     //Gestión del POWERBALL
     public void ActivatePowerBall()
@@ -201,15 +237,6 @@ public class BallMov : MonoBehaviour
                 if (ball.powerBallMaterial != null)
                     b.GetComponent<Renderer>().material = ball.powerBallMaterial;
             }
-        }
-
-        // 🔁 Converteix bricks a triggers
-        GameObject[] bricks = GameObject.FindGameObjectsWithTag("Brick");
-        foreach (GameObject brick in bricks)
-        {
-            Collider col = brick.GetComponent<Collider>();
-            if (col != null)
-                col.isTrigger = true;
         }
     }
 
@@ -229,14 +256,8 @@ public class BallMov : MonoBehaviour
         }
 
         // Restaura els bricks a col·lisions normals
-        GameObject[] bricks = GameObject.FindGameObjectsWithTag("Brick");
-        foreach (GameObject brick in bricks)
-        {
-            Collider col = brick.GetComponent<Collider>();
-            if (col != null)
-                col.isTrigger = false;
-        }
     }
+
 
 
     //Gestión del IMANT
@@ -253,7 +274,7 @@ public class BallMov : MonoBehaviour
 
     IEnumerator ImantDuration()
     {
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(10f);
         isImant = false;
     }
 
@@ -352,6 +373,4 @@ public class BallMov : MonoBehaviour
         // Interpolació suau: només s'aplica una part del canvi
         return Vector3.Slerp(dir, corrected.normalized, blendFactor).normalized;
     }
-
-
 }
