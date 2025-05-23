@@ -211,16 +211,19 @@ public class PalaMov : MonoBehaviour
 
         if (rb != null && ballMov != null)
         {
-            //ballMov.startLaunched = true;
+            ballMov.direccion = direction.normalized; // Inicialitza direcció pública
             ballMov.isPowerBall = isPowerBall;
-            ballMov.isExtraBall = true; // per evitar que es quedi enganxada a la pala
+            ballMov.isExtraBall = true;
             ballMov.originPosition = position;
             ballMov.isImant = isIman;
 
-            rb.linearVelocity = direction.normalized * speed;
+            rb.linearVelocity = ballMov.direccion * speed;
 
-            if (!isPowerBall) newBall.GetComponent<Renderer>().material = ballMov.normalMaterial;
-            else newBall.GetComponent<Renderer>().material = ballMov.powerBallMaterial;
+            if (!isPowerBall)
+                newBall.GetComponent<Renderer>().material = ballMov.normalMaterial;
+            else
+                newBall.GetComponent<Renderer>().material = ballMov.powerBallMaterial;
         }
     }
+
 }
