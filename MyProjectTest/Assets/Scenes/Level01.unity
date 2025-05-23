@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 1241916000720139926, guid: 932340ca87078cb419181d36abf4ece3, type: 3}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &15402126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -395,6 +396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!54 &20098521
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -596,6 +598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &27337167
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -797,6 +800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &30340948
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1074,6 +1078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 5009863699763523631, guid: 6ea1911ee754db844b05dbb8ad81ccf4, type: 3}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &39855605
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1217,6 +1222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &42273985
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1391,6 +1397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &59293280
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1595,6 +1602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!1001 &98085032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1950,6 +1958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &105872813
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2226,6 +2235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &150263819
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2426,7 +2436,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d545ed388bda5e0448e9bdaead630d5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUpPrefab: {fileID: 0}
+  powerUpPrefab: {fileID: 8008714902001598352, guid: 5795015ed1c292c4f83cf6187c4928e7, type: 3}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &150603637
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2628,6 +2639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &173960509
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2828,7 +2840,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d545ed388bda5e0448e9bdaead630d5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUpPrefab: {fileID: 0}
+  powerUpPrefab: {fileID: 2909747976738050595, guid: afa559178d754834ab72a952f17fc2e5, type: 3}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &181829650
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3030,6 +3043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &193190043
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3173,6 +3187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &208211407
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3347,6 +3362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &266635750
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3548,6 +3564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &267525142
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3749,6 +3766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &279245402
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3975,6 +3993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 1241916000720139926, guid: b8c9334371dddd244b009f4035a4b290, type: 3}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &285153344
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4157,6 +4176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &295524231
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4477,6 +4497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &315006556
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4678,6 +4699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &318208558
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4821,6 +4843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &323478275
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5247,6 +5270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &437635385
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5494,6 +5518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 1235146204388809680, guid: e96016e29cb5b7c45aaa5501f5741597, type: 3}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &512258786
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5642,6 +5667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &514951442
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5816,6 +5842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &535410597
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6109,6 +6136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!1001 &568811337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6212,6 +6240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!54 &568811340
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6413,6 +6442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &581868331
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6613,7 +6643,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d545ed388bda5e0448e9bdaead630d5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUpPrefab: {fileID: 0}
+  powerUpPrefab: {fileID: 4981704253834987415, guid: ec4c0daebd032f9488b5300422668e0e, type: 3}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &584674046
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6755,6 +6786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 1241916000720139926, guid: 0fedb59726f5c5446886467ded826278, type: 3}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &593437799
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7022,6 +7054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &628455656
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7165,6 +7198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &639317201
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7339,6 +7373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &654321946
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7540,6 +7575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &668309957
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7916,6 +7952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &710890752
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8159,6 +8196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &769791056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8360,6 +8398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &777701954
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8561,6 +8600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &804577464
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8702,6 +8742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 1241916000720139926, guid: b8c9334371dddd244b009f4035a4b290, type: 3}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &808932501
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9202,6 +9243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &874097962
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9624,6 +9666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &902253009
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9917,6 +9960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -10117,6 +10161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &966151718
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10318,6 +10363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &971140469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10429,6 +10475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &990098423
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10667,6 +10714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 1241916000720139926, guid: f8a98eecab6da5343a3558d34380d394, type: 3}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1013481149
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10849,6 +10897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1025704481
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11050,6 +11099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1029736663
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11251,6 +11301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1043064333
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11452,6 +11503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1048338321
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11831,6 +11883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1068640519
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12032,6 +12085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1070588867
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12309,6 +12363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1091103779
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12583,6 +12638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 4244021620527526815, guid: b5e9aa7c06db42a47a4b844899e359f5, type: 3}
 --- !u!65 &1184721595
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12784,6 +12840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1189747465
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12985,6 +13042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1195166304
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13212,6 +13270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 1241916000720139926, guid: 93f173d060e70694d897955b4dd97ced, type: 3}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1212789014
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13394,6 +13453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1221462081
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13595,6 +13655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1229333398
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13791,6 +13852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!54 &1232672223
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13992,6 +14054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1251162051
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14193,6 +14256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1251354048
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14394,6 +14458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1296736646
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14633,6 +14698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1300593861
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14807,6 +14873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1309564118
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15084,6 +15151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 1241916000720139926, guid: 42eb39cda1106134c9d0fc132e2dbefe, type: 3}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1356014785
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15208,6 +15276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1358598079
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15396,6 +15465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 1241916000720139926, guid: 41fabd83e0aa9a4419e1ba88462dbb62, type: 3}
+  destructionParticulas: {fileID: 0}
 --- !u!1001 &1395728873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15504,6 +15574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1395728877
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15780,6 +15851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1404576819
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15981,6 +16053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1406551519
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16182,6 +16255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1407878718
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16383,6 +16457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1412205657
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16788,6 +16863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1446011743
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16989,6 +17065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 1235146204388809680, guid: e96016e29cb5b7c45aaa5501f5741597, type: 3}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1467447624
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17132,6 +17209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1497381882
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17395,6 +17473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 3112519316500579954, guid: 8a414ffa9ca326b4e8eda93696e0861b, type: 3}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1517903940
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17681,6 +17760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1539869311
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17877,6 +17957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!54 &1548483708
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18170,6 +18251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!1001 &1566233811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18281,6 +18363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1566233815
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18490,6 +18573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1582636449
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18691,6 +18775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1608858888
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18895,6 +18980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!1001 &1615618720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19079,6 +19165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1616019911
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19507,6 +19594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1656175686
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19708,6 +19796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1671178192
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20044,6 +20133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 1241916000720139926, guid: b274af6c4c1859a44bc3f0024caf2b00, type: 3}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1720613621
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20226,6 +20316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1737684054
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20857,6 +20948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1762355493
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21058,6 +21150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1773711942
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21259,6 +21352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1798987743
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21460,6 +21554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 1311062477552606422, guid: 334f156814ab8cb45a785e0b3b17f28e, type: 3}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1804009985
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21661,6 +21756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1810141527
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21804,6 +21900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1817813064
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21978,6 +22075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 6339462121782074550, guid: 6a97044eebb156940886482bdbbfddc6, type: 3}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1836587519
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22179,6 +22277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1848343594
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22516,6 +22615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1866176006
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22717,6 +22817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1877284879
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23020,6 +23121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1950259321
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23221,6 +23323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1957198927
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23364,6 +23467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &1993309882
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23623,6 +23727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &2023216594
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23824,6 +23929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &2040502283
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24169,6 +24275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &2108706458
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24370,6 +24477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &2110557002
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24481,6 +24589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &2146778531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24704,6 +24813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefab: {fileID: 0}
+  destructionParticulas: {fileID: 0}
 --- !u!65 &2147007379
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -4,6 +4,8 @@ public class BrickMov : MonoBehaviour
 {
     public GameObject powerUpPrefab; // només un prefab a assignar
 
+    public GameObject destructionParticulas;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
