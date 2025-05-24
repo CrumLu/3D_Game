@@ -45,7 +45,9 @@ public class BallMov : MonoBehaviour
     //Ball enganxada a la Pala
     private bool isLaunched = false;
     private Transform palaTransform;
+
     private Vector3 offsetToPala = new Vector3(0, -0.4f, 0.75f); // ajustable segons la mida
+
 
 
     void Start()
@@ -278,6 +280,8 @@ public class BallMov : MonoBehaviour
         isImant = false;
     }
 
+    /*
+
     //Gestión del FASTBALL
     public void ActivateFastBall()
     {
@@ -358,6 +362,33 @@ public class BallMov : MonoBehaviour
         }
 
         speed = baseSpeed;
+    }
+
+    */
+
+    public void ActivateFastBall()
+    {
+        if (rb == null)
+            rb = GetComponent<Rigidbody>();
+
+        if (direccion == Vector3.zero)
+            direccion = rb.linearVelocity.normalized;
+
+        speed = speed * 1.5f;
+        rb.linearVelocity = direccion * speed;
+    }
+
+
+    public void ActivateSlowBall()
+    {
+        if (rb == null)
+            rb = GetComponent<Rigidbody>();
+
+        if (direccion == Vector3.zero)
+            direccion = rb.linearVelocity.normalized;
+
+        speed = speed / 1.5f;
+        rb.linearVelocity = direccion * speed;
     }
 
     private Vector3 EnforceMinRebound(Vector3 dir, float minX, float minZ, float blendFactor)
