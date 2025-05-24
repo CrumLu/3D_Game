@@ -45,7 +45,7 @@ public class BallMov : MonoBehaviour
     //Ball enganxada a la Pala
     private bool isLaunched = false;
     private Transform palaTransform;
-    private Vector3 offsetToPala = new Vector3(0, 0, 0.75f); // ajustable segons la mida
+    private Vector3 offsetToPala = new Vector3(0, -0.4f, 0.75f); // ajustable segons la mida
 
 
     void Start()
