@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BallMov : MonoBehaviour
 {
+    public GameObject pala;
+
     // Direccion de la Ball
     public Vector3 direccion;
     
@@ -43,10 +46,12 @@ public class BallMov : MonoBehaviour
     public Material normalMaterial;
 
     //Ball enganxada a la Pala
-    private bool isLaunched = false;
+    public bool isLaunched = false;
     private Transform palaTransform;
     private Vector3 offsetToPala = new Vector3(0, -0.45f, 0.75f); // ajustable segons la mida
 
+    public int vides = 3;
+    public bool ultimaBall;
 
     void Start()
     {
@@ -126,7 +131,52 @@ public class BallMov : MonoBehaviour
                 siguePala = false; // Deixa de seguir la pala
             }
         }
+        ultimaBall = pala.GetComponent<PalaMov>().ultimaBall();
     }
+
+    
+    void LateUpdate()
+    {
+        if (ultimaBall)
+        {
+            // Si la bola ha caigut sota z <= -11, notifica a la pala i es destrueix
+            if (transform.position.z <= -11f)
+            {
+                vides--;
+
+                if (vides > 0)
+                {
+                    isLaunched = false;
+                    isExtraBall = false;
+                    isImant = false;
+                    isPowerBall = false;
+                    direccion = Vector3.zero;
+                    speed = speed; // assegura’t de tenir aquesta variable!
+                    // Restaura qualsevol altre variable de powerup aquí!
+                }
+                else
+                {
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+                }
+            }
+        }
+    }
+ 
+    /*
+    void LateUpdate()
+    {
+        if (transform.position.z <= -11f)
+        {
+            // Abans de destruir la bola, notifica a la Pala (o GameManager)
+            PalaMov pala = FindObjectOfType<PalaMov>();
+            if (pala != null)
+                pala.CheckBallsLeftAndHandleLives();
+
+            Destroy(gameObject);
+        }
+    }
+    */
+
 
 
     void FixedUpdate()
