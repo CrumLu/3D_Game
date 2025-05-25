@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class BallMov : MonoBehaviour
 {
@@ -13,7 +14,9 @@ public class BallMov : MonoBehaviour
     private float collisionCooldown = 0.02f;  // Temps mínim entre col·lisions
     private float lastCollisionTime = -1f;
 
-
+    public AudioClip bounceSound;
+    public AudioClip wallSound;
+    public AudioMixerGroup sfxMixerGroup;   
     // Variables de SlowBall
     private Coroutine slowBallCoroutine;
     private float slowSpeed = 3f;
@@ -234,6 +237,11 @@ public class BallMov : MonoBehaviour
             }
             else if (collision.gameObject.CompareTag("Pala"))
             {
+                if (bounceSound != null && sfxMixerGroup != null)
+                {
+                    AudioSource.PlayClipAtPoint(bounceSound, transform.position, 1f);
+                }
+
                 if (isImant)
                 {
                     Vector3 hitPoint = collision.GetContact(0).point;
@@ -256,6 +264,11 @@ public class BallMov : MonoBehaviour
             else if (collision.gameObject.CompareTag("Paret"))
             {
                 Vector3 velocity = rb.linearVelocity;
+                if (wallSound != null && sfxMixerGroup != null)
+                {
+                    AudioSource.PlayClipAtPoint(wallSound, transform.position, 1f);
+                }
+
                 if (Mathf.Abs(velocity.z) < 1f)
                 {
                     Vector3 hit = collision.contacts[0].point;
