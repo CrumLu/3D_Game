@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class BrickMov : MonoBehaviour
 {
     public GameObject powerUpPrefab; // només un prefab a assignar
+    public AudioClip breakSound;
+    public AudioMixerGroup sfxMixerGroup;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -22,6 +25,10 @@ public class BrickMov : MonoBehaviour
 
     private void HandleDestruction()
     {
+        if (breakSound != null && sfxMixerGroup != null)
+        {
+            AudioSource.PlayClipAtPoint(breakSound, transform.position);
+        }
         // Instanciem el power-up si existeix
         if (powerUpPrefab != null)
         {

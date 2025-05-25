@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class PalaMov : MonoBehaviour
@@ -9,6 +10,9 @@ public class PalaMov : MonoBehaviour
 
     public KeyCode left;
     public KeyCode right;
+
+    public AudioClip PowerUpSound;
+    public AudioMixerGroup sfxMixerGroup;
 
     public float size;
 
@@ -77,6 +81,10 @@ public class PalaMov : MonoBehaviour
     {
         if (other.CompareTag("Augmentar"))
         {
+            if (PowerUpSound != null && sfxMixerGroup != null)
+            {
+                AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }   
             // Augmenta escala
             Vector3 scale = transform.localScale;
             scale.x += scaleChange;
@@ -95,6 +103,10 @@ public class PalaMov : MonoBehaviour
         }
         else if (other.CompareTag("Disminuir"))
         {
+            if (PowerUpSound != null && sfxMixerGroup != null)
+            {
+                AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }
             // Disminueix escala
             Vector3 scale = transform.localScale;
             scale.x -= scaleChange;
@@ -112,6 +124,11 @@ public class PalaMov : MonoBehaviour
         else if (other.CompareTag("PowerBall"))
         {
             BallMov ballScript = ball.GetComponent<BallMov>();
+
+            if (PowerUpSound != null && sfxMixerGroup != null)
+            {
+                AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }
             if (ballScript != null)
             {
                 ballScript.ActivatePowerBall();
@@ -122,6 +139,11 @@ public class PalaMov : MonoBehaviour
 
         else if (other.CompareTag("ExtraBall"))
         {
+            if (PowerUpSound != null && sfxMixerGroup != null)
+            {
+                AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }
+
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
 
             foreach (GameObject b in balls)
@@ -148,6 +170,11 @@ public class PalaMov : MonoBehaviour
         }
         else if (other.CompareTag("Imant"))
         {
+            if (PowerUpSound != null && sfxMixerGroup != null)
+            {
+                AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }
+
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
 
             foreach (GameObject b in balls)
@@ -163,6 +190,11 @@ public class PalaMov : MonoBehaviour
         }
         else if (other.CompareTag("NormalBall"))
         {
+            if (PowerUpSound != null && sfxMixerGroup != null)
+            {
+                AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }
+
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
 
             foreach (GameObject b in balls)
@@ -181,6 +213,11 @@ public class PalaMov : MonoBehaviour
         // MILLORAR AMB EXTRA BALL I TOT
         else if (other.CompareTag("FastBall"))
         {
+            if (PowerUpSound != null && sfxMixerGroup != null)
+            {
+                AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }
+
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
             foreach (GameObject b in balls)
             {
@@ -195,6 +232,11 @@ public class PalaMov : MonoBehaviour
 
         else if (other.CompareTag("SlowBall"))
         {
+            if (PowerUpSound != null && sfxMixerGroup != null)
+            {
+                AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }
+
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
 
             foreach (GameObject b in balls)
@@ -210,6 +252,11 @@ public class PalaMov : MonoBehaviour
         }
         else if (other.CompareTag("NextLevel"))
         {
+            if (PowerUpSound != null && sfxMixerGroup != null)
+            {
+                AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }
+
             string[] sceneOrder = { "Level01", "Level02", "Level03", "Level04", "Level05", "Credits" };
             string currentScene = SceneManager.GetActiveScene().name;
 
