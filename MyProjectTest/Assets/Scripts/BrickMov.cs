@@ -4,19 +4,11 @@ public class BrickMov : MonoBehaviour
 {
     public GameObject powerUpPrefab; // només un prefab a assignar
 
-    public GameObject destructionParticulas;
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            // Si té assignat un power-up, l’instancia
-            if (powerUpPrefab != null)
-            {
-                Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
-            }
-
-            Destroy(gameObject);
+            HandleDestruction();
         }
     }
 
@@ -24,13 +16,25 @@ public class BrickMov : MonoBehaviour
     {
         if (other.CompareTag("Ball"))
         {
-            // Si la pilota entra (en mode PowerBall), destruïm el brick
-            if (powerUpPrefab != null)
-            {
-                Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
-            }
-            Destroy(gameObject);
+            HandleDestruction();
         }
     }
 
+    private void HandleDestruction()
+    {
+        // Instanciem el power-up si existeix
+        if (powerUpPrefab != null)
+        {
+            Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
+        }
+
+        // Notificar el LevelManager que aquest brick ha estat destruït
+        LevelManager levelManager = FindObjectOfType<LevelManager>();
+        if (levelManager != null)
+        {
+            levelManager.BrickDestroyed();
+        }
+
+        Destroy(gameObject);
+    }
 }

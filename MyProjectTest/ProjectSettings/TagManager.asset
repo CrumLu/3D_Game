@@ -19,6 +19,7 @@ TagManager:
   - BrickTrigger
   - ParetHorizontal
   - ParetVertical
+  - NextLevel
   layers:
   - Default
   - TransparentFX
