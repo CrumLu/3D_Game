@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 64d77b03904085b47b61072adc870b91
   - enabled: 1
+    path: Assets/Scenes/Instructions.unity
+    guid: cc8576961ba768244a14a9cd05ada6d9
+  - enabled: 1
     path: Assets/Scenes/Level01.unity
     guid: abe88a76bc5f8d94199664b74fecc61a
   - enabled: 1
@@ -27,11 +30,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Credits.unity
     guid: 61ccb0eb96b37a34dbac38497e7f0081
   - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 38a553eac30e01c4e8831c1e9587bff5
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 7146cb918cb70e54da61d99a41514b90
-  - enabled: 1
-    path: Assets/Scenes/Instructions.unity
-    guid: cc8576961ba768244a14a9cd05ada6d9
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0

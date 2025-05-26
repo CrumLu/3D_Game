@@ -3540,7 +3540,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Pulsa "Espacio" para despegar la concha de la paleta. Utiliza las flechas
-    de direccion izquierda y derecha para mover la paleta.
+    de direccion izquierda y derecha para mover la paleta. Pulsa la tecla 'g' para
+    activar el god mode y usa las teclas '1', '2', '3', '4', '5' para seleccionar
+    que nivel quieres jugar.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
   m_sharedMaterial: {fileID: -3492229961430972474, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
@@ -3567,8 +3569,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
