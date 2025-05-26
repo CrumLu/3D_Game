@@ -15,6 +15,11 @@ TagManager:
   - Disminuir
   - FastBall
   - SlowBall
+  - Paret
+  - BrickTrigger
+  - ParetHorizontal
+  - ParetVertical
+  - NextLevel
   layers:
   - Default
   - TransparentFX
