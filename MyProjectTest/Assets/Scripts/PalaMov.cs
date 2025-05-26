@@ -33,7 +33,6 @@ public class PalaMov : MonoBehaviour
     void Start()
     {
         originalSize = transform.localScale.x;
-
         //palaTransform = this.transform;
     }
 
@@ -71,6 +70,7 @@ public class PalaMov : MonoBehaviour
         {
             transform.Translate(moveSpeed, 0, 0);
         }
+        //Debug.Log("Comprobación: " + size);
     }
 
     void OnTriggerEnter(Collider other)
@@ -81,6 +81,8 @@ public class PalaMov : MonoBehaviour
             Vector3 scale = transform.localScale;
             scale.x += scaleChange;
             transform.localScale = scale;
+
+            //Debug.Log("New scale: " + scale.x);
 
             // Recalcula l�mit m�xim basat en el nou tamany
             size = scale.x;
@@ -250,96 +252,4 @@ public class PalaMov : MonoBehaviour
                 newBall.GetComponent<Renderer>().material = ballMov.powerBallMaterial;
         }
     }
-
-    public bool ultimaBall()
-    {
-        /*
-        GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
-        if (balls.Length == 1)
-        {
-            Vector3 pos = balls[0].transform.position;
-            if (
-                pos.z > -11f && pos.z < 10f &&
-                pos.x > -11f && pos.x < 10f
-            )
-            {
-                // L'única bola està dins dels límits -> retorna true
-                return true;
-            }
-        }
-        // No és l'última bola dins dels límits
-        return false;
-        */
-        return true;
-    }
-
-
-
-    /*
-    public void CheckBallsLeftAndHandleLives()
-    {
-        // Mira quantes boles queden al mapa
-        int ballsLeft = GameObject.FindGameObjectsWithTag("Ball").Length;
-
-        if (ballsLeft <= 1) // Aquesta bola encara no s'ha destruït, així que és la darrera
-        {
-            vides--;
-            if (vides > 0)
-            {
-                // Instancia una nova bola "normal"
-                Vector3 spawnPos = transform.position + ballStartOffset;
-                GameObject newBall = Instantiate(ball, spawnPos, Quaternion.identity);
-                BallMov ballMov = newBall.GetComponent<BallMov>();
-                if (ballMov != null)
-                {
-                    ballMov.isLaunched = false;
-                    ballMov.isExtraBall = false;
-                    ballMov.isImant = false;
-                    ballMov.isPowerBall = false;
-                    ballMov.direccion = Vector3.zero;
-                    ballMov.speed = ballMov.speed; // assegura’t de tenir aquesta variable!
-                }
-            }
-            else
-            {
-                UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
-            }
-        }
-        // Si encara queden altres boles, no fem res més (només desapareix la que ha caigut)
-    }
-
-
-
-
-    
-    // PalaMov.cs
-    public void LoseLifeAndRespawnBall()
-    {
-        vides--;
-
-        if (vides > 0)
-        {
-            Vector3 spawnPos = transform.position + ballStartOffset;
-            GameObject newBall = Instantiate(ball, spawnPos, Quaternion.identity);
-
-            BallMov ballMov = newBall.GetComponent<BallMov>();
-            if (ballMov != null)
-            {
-                ballMov.isLaunched = false;
-                ballMov.isExtraBall = false;
-                ballMov.isImant = false;
-                ballMov.isPowerBall = false;
-                ballMov.direccion = Vector3.zero;
-                ballMov.speed = ballMov.speedInicial; // assegura’t de tenir aquesta variable!
-                if (ballMov.normalMaterial != null)
-                    newBall.GetComponent<Renderer>().material = ballMov.normalMaterial;
-                // Restaura qualsevol altre variable de powerup aquí!
-            }
-        }
-        else
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
-        }
-    }
-    */
 }
