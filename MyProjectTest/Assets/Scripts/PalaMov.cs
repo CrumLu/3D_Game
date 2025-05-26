@@ -15,6 +15,10 @@ public class PalaMov : MonoBehaviour
     public KeyCode left;
     public KeyCode right;
 
+    public Material imantMaterial;
+    public Material normalMaterial;
+    private Renderer rend;
+
     public float size;
 
     private float originalSize;
@@ -38,6 +42,9 @@ public class PalaMov : MonoBehaviour
     void Start()
     {
         originalSize = transform.localScale.x;
+        rend = GetComponent<Renderer>();
+        if (normalMaterial != null)
+            rend.material = normalMaterial;
         //palaTransform = this.transform;
     }
 
@@ -76,6 +83,29 @@ public class PalaMov : MonoBehaviour
             transform.Translate(moveSpeed, 0, 0);
         }
         //Debug.Log("Comprobación: " + size);
+    }
+
+    public void ActivateImantVisual()
+    {
+        if (rend != null && imantMaterial != null)
+        {
+            rend.material = imantMaterial; 
+        }
+        StartCoroutine(ResetImantVisualAfterDelay(10f));
+    }
+
+    public void DeactivateImantVisual()
+    {
+        if (rend != null && normalMaterial != null)
+        {
+            rend.material = normalMaterial;
+        }
+    }
+
+    IEnumerator ResetImantVisualAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        DeactivateImantVisual();
     }
 
     void OnTriggerEnter(Collider other)
@@ -180,6 +210,8 @@ public class PalaMov : MonoBehaviour
                 AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
             }
 
+            rend.material = imantMaterial; // Canvia el material de la pala a l'imant
+
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
 
             foreach (GameObject b in balls)
@@ -189,6 +221,11 @@ public class PalaMov : MonoBehaviour
                 {
                     ballScript.ActivateImant();
                 }
+            }
+            PalaMov palaScript = GetComponent<PalaMov>();
+            if (palaScript != null)
+            {
+                palaScript.ActivateImantVisual();
             }
 
             Destroy(other.gameObject);
@@ -303,4 +340,6 @@ public class PalaMov : MonoBehaviour
                 newBall.GetComponent<Renderer>().material = ballMov.powerBallMaterial;
         }
     }
+
+
 }

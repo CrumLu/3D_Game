@@ -22370,7 +22370,7 @@ RectTransform:
   m_GameObject: {fileID: 2108093424}
   m_LocalRotation: {x: 0.35020736, y: 0, z: 0, w: 0.9366722}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1925902459}
@@ -23230,6 +23230,14 @@ PrefabInstance:
       propertyPath: sfxMixerGroup
       value: 
       objectReference: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
+    - target: {fileID: 6779570158682056452, guid: 7d09acfbcb0b5bf499637fb3c5e30fb6, type: 3}
+      propertyPath: normalMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 1fc4fc873f59473409f0d36d4c8010e1, type: 2}
+    - target: {fileID: 6779570158682056452, guid: 7d09acfbcb0b5bf499637fb3c5e30fb6, type: 3}
+      propertyPath: powerBallMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: ed70c95f37c38af4490f941f63fafe5c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23243,6 +23251,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 530645917426060687, guid: 5589b35f07e646d49800ee4d8eba2df5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f3e10fc46fe8de47bd247adb7b59a9a, type: 2}
     - target: {fileID: 4688969848465505506, guid: 5589b35f07e646d49800ee4d8eba2df5, type: 3}
       propertyPath: ball
       value: 
@@ -23252,9 +23264,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 297dbc1e291a2d94a843caf1d36debc7, type: 3}
     - target: {fileID: 4688969848465505506, guid: 5589b35f07e646d49800ee4d8eba2df5, type: 3}
+      propertyPath: imantMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e913cd841ef1d147a1ef28aadcf773b, type: 2}
+    - target: {fileID: 4688969848465505506, guid: 5589b35f07e646d49800ee4d8eba2df5, type: 3}
       propertyPath: sfxMixerGroup
       value: 
       objectReference: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
+    - target: {fileID: 4688969848465505506, guid: 5589b35f07e646d49800ee4d8eba2df5, type: 3}
+      propertyPath: normalMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f3e10fc46fe8de47bd247adb7b59a9a, type: 2}
     - target: {fileID: 6078975515154099358, guid: 5589b35f07e646d49800ee4d8eba2df5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.65

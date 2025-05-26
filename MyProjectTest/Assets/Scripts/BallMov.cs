@@ -263,8 +263,15 @@ public class BallMov : MonoBehaviour
             if (ball != null)
             {
                 ball.isPowerBall = true;
-                if (ball.powerBallMaterial != null)
-                    b.GetComponent<Renderer>().material = ball.powerBallMaterial;
+                Transform meshChild = b.transform.Find("default");
+                if (meshChild != null)
+                {
+                    Renderer rend = meshChild.GetComponent<Renderer>();
+                    if (rend != null && ball.powerBallMaterial != null)
+                    {
+                        rend.material = ball.powerBallMaterial;
+                    }
+                }
             }
         }
     }
@@ -281,7 +288,8 @@ public class BallMov : MonoBehaviour
 
         if (normalMaterial != null)
         {
-            GetComponent<Renderer>().material = normalMaterial;
+            Renderer rend = transform.Find("default").GetComponent<Renderer>();
+            rend.material = normalMaterial;
         }
 
         // Restaura els bricks a col·lisions normals
