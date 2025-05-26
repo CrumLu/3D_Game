@@ -6,17 +6,20 @@ using UnityEngine.Audio;
 
 public class BallMov : MonoBehaviour
 {
+    public AudioClip bounceSound;
+    public AudioClip wallSound;
+    public AudioMixerGroup sfxMixerGroup;
+
+
     public GameObject pala;
 
     // Direccion de la Ball
     public Vector3 direccion;
-    
+
     private float collisionCooldown = 0.02f;  // Temps mínim entre col·lisions
     private float lastCollisionTime = -1f;
 
-    public AudioClip bounceSound;
-    public AudioClip wallSound;
-    public AudioMixerGroup sfxMixerGroup;   
+
     // Variables de SlowBall
     private Coroutine slowBallCoroutine;
     private float slowSpeed = 3f;
@@ -39,6 +42,7 @@ public class BallMov : MonoBehaviour
 
     // Variables de moviment
     public float speed = 7.0f;
+    private float normalSpeed = 7.0f; // velocitat normal de la bola
     private Rigidbody rb;
 
     // Variables del POWERBALL
@@ -56,7 +60,7 @@ public class BallMov : MonoBehaviour
 
 
     public int vides = 3;
-    public bool ultimaBall;
+    public bool ultimaBall = true;
 
     void Start()
     {
@@ -136,52 +140,15 @@ public class BallMov : MonoBehaviour
                 siguePala = false; // Deixa de seguir la pala
             }
         }
-        ultimaBall = pala.GetComponent<PalaMov>().ultimaBall();
     }
 
-    
-    void LateUpdate()
-    {
-        if (ultimaBall)
-        {
-            // Si la bola ha caigut sota z <= -11, notifica a la pala i es destrueix
-            if (transform.position.z <= -11f)
-            {
-                vides--;
-
-                if (vides > 0)
-                {
-                    isLaunched = false;
-                    isExtraBall = false;
-                    isImant = false;
-                    isPowerBall = false;
-                    direccion = Vector3.zero;
-                    speed = speed; // assegura’t de tenir aquesta variable!
-                    // Restaura qualsevol altre variable de powerup aquí!
-                }
-                else
-                {
-                    UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
-                }
-            }
-        }
-    }
- 
-    /*
     void LateUpdate()
     {
         if (transform.position.z <= -11f)
         {
-            // Abans de destruir la bola, notifica a la Pala (o GameManager)
-            PalaMov pala = FindObjectOfType<PalaMov>();
-            if (pala != null)
-                pala.CheckBallsLeftAndHandleLives();
-
-            Destroy(gameObject);
+            GameManager.instance.OnBallLost(gameObject); // La bola que cau AVISA el GameManager
         }
     }
-    */
-
 
 
     void FixedUpdate()
@@ -193,10 +160,6 @@ public class BallMov : MonoBehaviour
             rb.linearVelocity = direccion * speed;
         }
     }
-
-
-
-
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -215,7 +178,7 @@ public class BallMov : MonoBehaviour
 
                 if (isPowerBall)
                 {
-                    Destroy(collision.gameObject);
+                    //Destroy(collision.gameObject);
                     rb.linearVelocity = direccion * speed;
                     return;
                 }
@@ -232,7 +195,7 @@ public class BallMov : MonoBehaviour
 
                     rb.linearVelocity = direccion * speed;
 
-                    Destroy(collision.gameObject);
+                    //Destroy(collision.gameObject);
                 }
             }
             else if (collision.gameObject.CompareTag("Pala"))
@@ -264,6 +227,7 @@ public class BallMov : MonoBehaviour
             else if (collision.gameObject.CompareTag("Paret"))
             {
                 Vector3 velocity = rb.linearVelocity;
+
                 if (wallSound != null && sfxMixerGroup != null)
                 {
                     AudioSource.PlayClipAtPoint(wallSound, transform.position, 1f);
