@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public int vides = 3;
 
+    private bool LevelCompleted = false;
+    private string[] SceneOrder = { "Level01", "Level02", "Level03", "Level04", "Level05", "WinScreen" };
+
+
     void Awake()
     {
         if (instance == null)
@@ -33,11 +37,28 @@ public class GameManager : MonoBehaviour
         {
             vides--;
             //UpdateLivesUI();
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdateLives(vides-1); // Actualitza la UI de vides
+            }
+            else
+            {
+                Debug.LogWarning("No s'ha trobat UIManager per actualitzar les vides.");
+            }
 
             if (vides <= 0)
             {
                 SceneManager.LoadScene("GameOver");
                 vides = 3;
+                if (ui != null)
+                {
+                    ui.UpdateLives(vides - 1); // Actualitza la UI de vides
+                }
+                else
+                {
+                    Debug.LogWarning("No s'ha trobat UIManager per actualitzar les vides.");
+                }
             }
             else
                 RespawnBall();
@@ -69,6 +90,53 @@ public class GameManager : MonoBehaviour
         if (paddleScript != null)
         {
             paddleScript.ball = ballPrefab;  // Assegura que la referència segueix apuntant al prefab
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1)) 
+        {
+            SceneManager.LoadScene("Level01");
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SceneManager.LoadScene("Level02");
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SceneManager.LoadScene("Level03");
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            SceneManager.LoadScene("Level04");
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            SceneManager.LoadScene("Level05");
+        }
+
+        GameObject[] bricks = GameObject.FindGameObjectsWithTag("Brick");
+        Debug.Log("Bloques restantes: " + bricks.Length);
+
+        if (!LevelCompleted && bricks.Length == 0)
+        {
+            LevelCompleted = true;
+            Invoke("LoadNextLevel", 1.5f);
+        }
+    }
+
+    void LoadNextLevel()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+        int index = System.Array.IndexOf(SceneOrder, currentScene);
+        if (index >= 0 && index < SceneOrder.Length - 1)
+        {
+            SceneManager.LoadScene(SceneOrder[index + 1]);
+        }
+        else
+        {
+            Debug.Log("Última escena alcanzada o no encontrada.");
         }
     }
 }

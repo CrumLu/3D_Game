@@ -300,7 +300,7 @@ public class PalaMov : MonoBehaviour
                 AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
             }
 
-            string[] sceneOrder = { "Level01", "Level02", "Level03", "Level04", "Level05", "Credits" };
+            string[] sceneOrder = { "Level01", "Level02", "Level03", "Level04", "Level05", "WinScreen"};
             string currentScene = SceneManager.GetActiveScene().name;
 
             int index = System.Array.IndexOf(sceneOrder, currentScene);

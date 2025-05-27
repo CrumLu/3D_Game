@@ -278,6 +278,9 @@ public class BallMov : MonoBehaviour
 
     public void DeactivatePowerBall()
     {
+
+        if (!isPowerBall) return;
+
         isPowerBall = false;
 
         if (powerBallCoroutine != null)
