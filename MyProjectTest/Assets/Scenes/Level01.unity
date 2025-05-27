@@ -9998,6 +9998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tvides: {fileID: 1351718923}
   tscore: {fileID: 708646894}
+  tmaxscore: {fileID: 0}
 --- !u!4 &1017752424
 Transform:
   m_ObjectHideFlags: 0
@@ -23333,6 +23334,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 9f3e10fc46fe8de47bd247adb7b59a9a, type: 2}
+    - target: {fileID: 1463983096801263396, guid: 5589b35f07e646d49800ee4d8eba2df5, type: 3}
+      propertyPath: m_Size.z
+      value: 0.18807888
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463983096801263396, guid: 5589b35f07e646d49800ee4d8eba2df5, type: 3}
+      propertyPath: m_Center.z
+      value: 0.40596056
+      objectReference: {fileID: 0}
     - target: {fileID: 4688969848465505506, guid: 5589b35f07e646d49800ee4d8eba2df5, type: 3}
       propertyPath: ball
       value: 
@@ -23363,7 +23372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6078975515154099358, guid: 5589b35f07e646d49800ee4d8eba2df5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.5
+      value: -8.5
       objectReference: {fileID: 0}
     - target: {fileID: 6078975515154099358, guid: 5589b35f07e646d49800ee4d8eba2df5, type: 3}
       propertyPath: m_LocalRotation.w
