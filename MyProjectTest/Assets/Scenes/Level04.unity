@@ -6976,6 +6976,8 @@ MonoBehaviour:
   ballPrefab: {fileID: 3649813562322781966, guid: 7d09acfbcb0b5bf499637fb3c5e30fb6, type: 3}
   pala: {fileID: 7822801209214077775, guid: 5589b35f07e646d49800ee4d8eba2df5, type: 3}
   vides: 3
+  scoreActual: 0
+  maxScore: 0
 --- !u!4 &329071211
 Transform:
   m_ObjectHideFlags: 0
@@ -13928,7 +13930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
-  powerUpPrefab: {fileID: 0}
+  powerUpPrefab: {fileID: 1235146204388809680, guid: e96016e29cb5b7c45aaa5501f5741597, type: 3}
 --- !u!1001 &695069809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14131,7 +14133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
-  powerUpPrefab: {fileID: 0}
+  powerUpPrefab: {fileID: 6339462121782074550, guid: 6a97044eebb156940886482bdbbfddc6, type: 3}
 --- !u!1001 &699403959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14692,7 +14694,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score: 0'
+  m_text: 'Puntos: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
   m_sharedMaterial: {fileID: -3492229961430972474, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
@@ -14757,7 +14759,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -186.02963, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -16395,6 +16397,51 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+--- !u!1 &790337827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 790337829}
+  - component: {fileID: 790337828}
+  m_Layer: 0
+  m_Name: 'LevelManager '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &790337828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790337827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0638cd717ae998f45ad11eaa7c9e0d37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specialPowerUpPrefab: {fileID: 92169830844433763, guid: 4610db9e93e537847a3299605d16950b, type: 3}
+--- !u!4 &790337829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790337827}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 10.1, z: -1.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &791243160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26894,6 +26941,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tvides: {fileID: 1351718923}
+  tscore: {fileID: 708646894}
+  tmaxscore: {fileID: 0}
 --- !u!4 &1321640639
 Transform:
   m_ObjectHideFlags: 0
@@ -34214,7 +34263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
-  powerUpPrefab: {fileID: 0}
+  powerUpPrefab: {fileID: 1235146204388809680, guid: e96016e29cb5b7c45aaa5501f5741597, type: 3}
 --- !u!1001 &1623417109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39169,7 +39218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
-  powerUpPrefab: {fileID: 0}
+  powerUpPrefab: {fileID: 1235146204388809680, guid: e96016e29cb5b7c45aaa5501f5741597, type: 3}
 --- !u!1001 &1862927475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44379,3 +44428,4 @@ SceneRoots:
   - {fileID: 329071211}
   - {fileID: 1321640639}
   - {fileID: 620471455}
+  - {fileID: 790337829}
