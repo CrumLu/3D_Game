@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     private bool LevelCompleted = false;
     private string[] SceneOrder = { "Level01", "Level02", "Level03", "Level04", "Level05", "WinScreen" };
 
-    public int scoreActual;
+    public int scoreActual = 0;
     public int maxScore = 0;
 
     void Start()
@@ -63,10 +63,13 @@ public class GameManager : MonoBehaviour
             if (vides <= 0)
             {
                 SceneManager.LoadScene("GameOver");
+                ui.UpdateMaxScore(maxScore); // Actualitza la UI del màxim score
                 vides = 3;
+                scoreActual = 0; 
                 if (ui != null)
                 {
-                    ui.UpdateLives(vides - 1); // Actualitza la UI de vides
+                    ui.UpdateLives(vides - 1);
+                    ui.UpdateScore(scoreActual);// Actualitza la UI de vides
                 }
                 else
                 {
@@ -104,9 +107,21 @@ public class GameManager : MonoBehaviour
             paddleScript.ball = ballPrefab;  // Assegura que la referència segueix apuntant al prefab
         }
     }
-
+    
     void Update()
     {
+        if (SceneManager.GetActiveScene().name == "WinScreen")
+        {
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdateMaxScore(maxScore); // Actualitza la UI del màxim score
+            }
+            else
+            {
+                Debug.LogWarning("No s'ha trobat UIManager per actualitzar el màxim score.");
+            }
+        }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SceneManager.LoadScene("Level01");
@@ -145,6 +160,7 @@ public class GameManager : MonoBehaviour
         if (index >= 0 && index < SceneOrder.Length - 1)
         {
             SceneManager.LoadScene(SceneOrder[index + 1]);
+            LevelCompleted = false; // Reinicia el flag per al següent nivell
         }
         else
         {
@@ -168,8 +184,10 @@ public class GameManager : MonoBehaviour
             ui.UpdateScore(scoreActual);
     }
 
+    /*
     public void IniciarNovaPartida()
     {
         scoreActual = 0;
     }
+    */
 }
