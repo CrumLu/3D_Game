@@ -5,7 +5,8 @@ public class MainMenuManager : MonoBehaviour
 {
 	public void StartGame()
 	{
-		SceneManager.LoadScene("Level01");
+		GameManager.instance.IniciarNovaPartida();
+        SceneManager.LoadScene("Level01");
 	}
 
 	public void OpenInstructions()

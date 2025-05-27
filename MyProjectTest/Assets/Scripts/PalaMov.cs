@@ -50,22 +50,25 @@ public class PalaMov : MonoBehaviour
 
     void Update()
     {
-        size = transform.localScale.x;
+        if (CameraIntroController.introFinished)
+        {
+            size = transform.localScale.x;
 
-        if (Input.GetKey(left))
-        {
-            state = State.left;
-        }
-        else if (Input.GetKey(right))
-        {
-            state = State.right;
-        }
-        else
-        {
-            state = State.stop;
-        }
+            if (Input.GetKey(left))
+            {
+                state = State.left;
+            }
+            else if (Input.GetKey(right))
+            {
+                state = State.right;
+            }
+            else
+            {
+                state = State.stop;
+            }
 
-        Move();
+            Move();
+        }
     }
 
     void Move()
