@@ -1,16 +1,29 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject ballPrefab; // Assigna el prefab de la bola a l’inspector
-    public GameObject pala;       // Assigna el GameObject de la pala a l’inspector
+    public GameObject ballPrefab; // Assigna el prefab de la bola a lâ€™inspector
+    public GameObject pala;       // Assigna el GameObject de la pala a lâ€™inspector
 
     public static GameManager instance;
     public int vides = 3;
 
     private bool LevelCompleted = false;
     private string[] SceneOrder = { "Level01", "Level02", "Level03", "Level04", "Level05", "WinScreen" };
+
+    public int scoreActual;
+    public int maxScore = 0;
+
+    void Start()
+    {
+       
+        // Actualitza la UI
+        UIManager ui = FindObjectOfType<UIManager>();
+        if (ui != null)
+            ui.UpdateScore(scoreActual);
+    }
+
 
 
     void Awake()
@@ -40,7 +53,7 @@ public class GameManager : MonoBehaviour
             UIManager ui = FindObjectOfType<UIManager>();
             if (ui != null)
             {
-                ui.UpdateLives(vides-1); // Actualitza la UI de vides
+                ui.UpdateLives(vides - 1); // Actualitza la UI de vides
             }
             else
             {
@@ -67,7 +80,7 @@ public class GameManager : MonoBehaviour
 
     void RespawnBall()
     {
-        // Trobar la pala al joc per saber on col·locar la nova bola
+        // Trobar la pala al joc per saber on colÂ·locar la nova bola
         GameObject paddle = GameObject.FindGameObjectWithTag("Pala");
         Vector3 spawnPos = paddle.transform.position + new Vector3(0, -0.4f, 0.75f);
         // ^ Offset similar al que fa servir BallMov per posicionar la bola sobre la pala
@@ -78,24 +91,23 @@ public class GameManager : MonoBehaviour
 
         // Inicialitzar l'estat de la nova bola
         BallMov ballScript = newBall.GetComponent<BallMov>();
-        ballScript.isLaunched = false;   // Encara no llançada (queda enganxada a la pala)
-        ballScript.isExtraBall = false;  // És una bola normal, no una extra generada per power-up
-        ballScript.isImant = false;      // Power-up imant desactivat
-        ballScript.isPowerBall = false;  // Power-up power-ball desactivat
-        ballScript.speed = 7.0f;         // Velocitat base (assegurar que torna a la normalitat)
-                                         // (Altres propietats com vides o materials es poden inicialitzar segons convingui)
+        ballScript.isLaunched = false;
+        ballScript.isExtraBall = false;
+        ballScript.isImant = false;
+        ballScript.isPowerBall = false;
+        ballScript.speed = 7.0f;
 
-        // (Opcional) Actualitzar referències al GameManager o PalaMov si cal
+        // (Opcional) Actualitzar referÃ¨ncies al GameManager o PalaMov si cal
         PalaMov paddleScript = paddle.GetComponent<PalaMov>();
         if (paddleScript != null)
         {
-            paddleScript.ball = ballPrefab;  // Assegura que la referència segueix apuntant al prefab
+            paddleScript.ball = ballPrefab;  // Assegura que la referÃ¨ncia segueix apuntant al prefab
         }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1)) 
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SceneManager.LoadScene("Level01");
         }
@@ -136,7 +148,28 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Última escena alcanzada o no encontrada.");
+            Debug.Log("Ãšltima escena alcanzada o no encontrada.");
         }
+    }
+
+    public void ActualizaPuntuacion(int puntuacio)
+    {
+        scoreActual += puntuacio;
+        if (scoreActual > maxScore)
+        {
+            maxScore = scoreActual;
+            PlayerPrefs.SetInt("MaxScore", maxScore);
+            PlayerPrefs.Save();
+        }
+
+        // Notifica la UI (opcional, si vols actualitzaciÃ³ instantÃ nia)
+        UIManager ui = FindObjectOfType<UIManager>();
+        if (ui != null)
+            ui.UpdateScore(scoreActual);
+    }
+
+    public void IniciarNovaPartida()
+    {
+        scoreActual = 0;
     }
 }

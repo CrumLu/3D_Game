@@ -81,63 +81,66 @@ public class BallMov : MonoBehaviour
 
     void Update()
     {
-        if (!isLaunched && palaTransform != null)
+        if (CameraIntroController.introFinished)
         {
-            if (!isExtraBall)
+            if (!isLaunched && palaTransform != null)
             {
-                transform.position = palaTransform.position + offsetToPala;
-            }
-
-            if (Input.GetKeyDown(KeyCode.Space) || isExtraBall)
-            {
-                if (isExtraBall)
+                if (!isExtraBall)
                 {
-                    float x = Random.Range(-1f, 1f);
-                    float z = Random.Range(0.5f, 1f);
-                    Vector3 randomDir = new Vector3(x, 0, z).normalized;
-                    rb.linearVelocity = randomDir * speed;
-                }
-                else
-                {
-                    rb.linearVelocity = new Vector3(-1, 0, 1).normalized * speed;
+                    transform.position = palaTransform.position + offsetToPala;
                 }
 
-                isLaunched = true;
-                //isImant = true;
-            }
-        }
-        // Si la bola és imant, s'enganxa a la pala
-        else if (siguePala)
-        {
-            transform.position = palaTransform.position + imantOffset;
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                if (isExtraBall)
+                if (Input.GetKeyDown(KeyCode.Space) || isExtraBall)
                 {
-                    float x = Random.Range(-1f, 1f);
-                    float z = Random.Range(0.5f, 1f);
-                    Vector3 randomDir = new Vector3(x, 0, z).normalized;
-                    rb.linearVelocity = randomDir * speed;
-                }
-                else
-                {
-
-                    // Determina la direcció en funció de la posició relativa de la bola respecte a la pala
-                    float offset = imantOffset.x;
-
-                    Vector3 newDir;
-                    if (offset < -0.1f)
-                        newDir = new Vector3(-1, 0, 1);
-                    else if (offset > 0.1f)
-                        newDir = new Vector3(1, 0, 1);
+                    if (isExtraBall)
+                    {
+                        float x = Random.Range(-1f, 1f);
+                        float z = Random.Range(0.5f, 1f);
+                        Vector3 randomDir = new Vector3(x, 0, z).normalized;
+                        rb.linearVelocity = randomDir * speed;
+                    }
                     else
-                        newDir = new Vector3(0, 0, 1);
+                    {
+                        rb.linearVelocity = new Vector3(-1, 0, 1).normalized * speed;
+                    }
 
-                    rb.linearVelocity = newDir.normalized * speed;
-
+                    isLaunched = true;
+                    //isImant = true;
                 }
-                siguePala = false; // Deixa de seguir la pala
+            }
+            // Si la bola és imant, s'enganxa a la pala
+            else if (siguePala)
+            {
+                transform.position = palaTransform.position + imantOffset;
+
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    if (isExtraBall)
+                    {
+                        float x = Random.Range(-1f, 1f);
+                        float z = Random.Range(0.5f, 1f);
+                        Vector3 randomDir = new Vector3(x, 0, z).normalized;
+                        rb.linearVelocity = randomDir * speed;
+                    }
+                    else
+                    {
+
+                        // Determina la direcció en funció de la posició relativa de la bola respecte a la pala
+                        float offset = imantOffset.x;
+
+                        Vector3 newDir;
+                        if (offset < -0.1f)
+                            newDir = new Vector3(-1, 0, 1);
+                        else if (offset > 0.1f)
+                            newDir = new Vector3(1, 0, 1);
+                        else
+                            newDir = new Vector3(0, 0, 1);
+
+                        rb.linearVelocity = newDir.normalized * speed;
+
+                    }
+                    siguePala = false; // Deixa de seguir la pala
+                }
             }
         }
     }

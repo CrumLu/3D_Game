@@ -45,6 +45,8 @@ public class BrickMov : MonoBehaviour
             levelManager.BrickDestroyed();
         }
 
+        GameManager.instance.ActualizaPuntuacion(100); // 'puntuacio' pot ser 10, 100, etc.
+
         Destroy(gameObject);
     }
 }

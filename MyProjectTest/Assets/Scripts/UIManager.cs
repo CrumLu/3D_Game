@@ -5,7 +5,9 @@ public class UIManager : MonoBehaviour
 {
 	public TextMeshProUGUI tvides;
 
-	public void UpdateLives(int vides)
+    public TextMeshProUGUI tscore;
+
+    public void UpdateLives(int vides)
 	{
 		if (tvides != null && vides != -1)
 		{
@@ -13,7 +15,13 @@ public class UIManager : MonoBehaviour
 		}
 	}
 
-	void Start()
+    public void UpdateScore(int scoreActual)
+    {
+        if (tscore != null)
+            tscore.text = "Score: " + scoreActual;
+    }
+
+    void Start()
 	{
 		if (GameManager.instance != null)
 		{
