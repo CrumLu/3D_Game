@@ -115,6 +115,8 @@ public class GameManager : MonoBehaviour
             UIManager ui = FindObjectOfType<UIManager>();
             if (ui != null)
             {
+                vides = 3;
+                ui.UpdateLives(vides - 1); // Actualitza la UI de vides
                 ui.UpdateMaxScore(maxScore); // Actualitza la UI del màxim score
             }
             else

@@ -23,4 +23,14 @@ public class MainMenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("Credits");
     }
+
+	public void QuitGame()
+    {
+        // Si s'està executant en l'editor, només atura la reproducció
+		#if UNITY_EDITOR
+					UnityEditor.EditorApplication.isPlaying = false;
+		#else
+			Application.Quit();
+		#endif
+    }
 }
