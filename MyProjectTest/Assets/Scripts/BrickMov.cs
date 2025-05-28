@@ -8,6 +8,7 @@ public class BrickMov : MonoBehaviour
     public AudioMixerGroup sfxMixerGroup;
 
     public GameObject powerUpPrefab; // només un prefab a assignar
+    public GameObject destroyParticlesPrefab;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -47,6 +48,10 @@ public class BrickMov : MonoBehaviour
 
         GameManager.instance.ActualizaPuntuacion(100); // 'puntuacio' pot ser 10, 100, etc.
 
+        if (destroyParticlesPrefab != null)
+        {
+            Instantiate(destroyParticlesPrefab, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 }

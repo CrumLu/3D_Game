@@ -322,6 +322,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &20406126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -479,6 +480,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!23 &20406131
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -845,6 +847,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &55052220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1048,6 +1051,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &81551646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1251,6 +1255,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &85617778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1427,6 +1432,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!54 &85617784
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1611,6 +1617,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!23 &95540603
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1948,6 +1955,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &116104357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2151,6 +2159,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &123730591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2327,6 +2336,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!54 &123730597
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2557,6 +2567,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &160383605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2760,6 +2771,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &163848272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2963,6 +2975,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &176486629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3166,6 +3179,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &182039263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3369,6 +3383,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &186585464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3572,6 +3587,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &280663049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3704,6 +3720,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!65 &280663053
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3973,6 +3990,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &285508975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4176,6 +4194,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &290388431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4379,6 +4398,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &293235501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4582,6 +4602,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1 &294793854
 GameObject:
   m_ObjectHideFlags: 0
@@ -4901,6 +4922,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &320118690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5104,6 +5126,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &325030794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5307,6 +5330,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &331391857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5510,6 +5534,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &344450246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5713,6 +5738,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &391473915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5916,6 +5942,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &402046032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6119,6 +6146,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &416521552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6322,6 +6350,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &429410257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6525,6 +6554,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1 &437554424
 GameObject:
   m_ObjectHideFlags: 0
@@ -6867,6 +6897,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &483409756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7043,6 +7074,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!54 &483409762
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7273,6 +7305,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &501925087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7449,6 +7482,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!54 &501925093
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7679,6 +7713,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &515155426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7882,6 +7917,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &532333236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8085,6 +8121,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &557517126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8261,6 +8298,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 1235146204388809680, guid: e96016e29cb5b7c45aaa5501f5741597, type: 3}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!54 &557517132
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8491,6 +8529,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &577839265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8694,6 +8733,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &583118485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8897,6 +8937,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &592766825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9100,6 +9141,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &603356627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9250,6 +9292,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!65 &603356631
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9455,6 +9498,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!23 &618513157
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9703,6 +9747,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &636990732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9906,6 +9951,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &646742132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10109,6 +10155,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &665627638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10312,6 +10359,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &670144250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10515,6 +10563,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &675686221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10718,6 +10767,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &700168403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10921,6 +10971,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -11221,6 +11272,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &729229749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11424,6 +11476,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1 &732742889
 GameObject:
   m_ObjectHideFlags: 0
@@ -11702,6 +11755,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &762673449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11905,6 +11959,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &763795881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12108,6 +12163,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &765206431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12265,6 +12321,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!23 &765206436
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12513,6 +12570,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &770593606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12716,6 +12774,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &780101585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12919,6 +12978,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &787682800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13076,6 +13136,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!23 &787682805
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13324,6 +13385,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1 &799217582
 GameObject:
   m_ObjectHideFlags: 0
@@ -13602,6 +13664,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!4 &839928243 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0c3c7671c645b99439d8204577b27299, type: 3}
@@ -13764,6 +13827,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!23 &848544389
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14172,6 +14236,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1 &859088625
 GameObject:
   m_ObjectHideFlags: 0
@@ -14450,6 +14515,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1 &880129467
 GameObject:
   m_ObjectHideFlags: 0
@@ -14918,6 +14984,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &912870382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15121,6 +15188,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &937268781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15278,6 +15346,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!23 &937268786
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15611,6 +15680,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!54 &965705137
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15841,6 +15911,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &980463029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16044,6 +16115,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &992514592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16247,6 +16319,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1006988216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16450,6 +16523,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1015930481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16626,6 +16700,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!54 &1015930487
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17082,6 +17157,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!23 &1053177478
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17330,6 +17406,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1063033192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17748,6 +17825,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 1235146204388809680, guid: e96016e29cb5b7c45aaa5501f5741597, type: 3}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1072379354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17951,6 +18029,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1079983213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18127,6 +18206,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!54 &1079983219
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18357,6 +18437,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1090343164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18560,6 +18641,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1107979048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18763,6 +18845,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1117594132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18966,6 +19049,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1141812986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19123,6 +19207,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!23 &1141812991
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19371,6 +19456,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1182210745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19574,6 +19660,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1 &1190230785 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 82674ed51ff01084ba0bbf6c8fe23dac, type: 3}
@@ -19642,6 +19729,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!23 &1190230790
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20026,6 +20114,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1205972994
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20229,6 +20318,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1 &1208553877
 GameObject:
   m_ObjectHideFlags: 0
@@ -20472,6 +20562,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!23 &1209813778
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20720,6 +20811,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1229731729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20923,6 +21015,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1241658995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21099,6 +21192,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!54 &1241659001
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21324,6 +21418,69 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
+--- !u!1001 &1256993500
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4704232930832137666, guid: 18d3eeebb87f84543830c8fb6294eedb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -31.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 4704232930832137666, guid: 18d3eeebb87f84543830c8fb6294eedb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4704232930832137666, guid: 18d3eeebb87f84543830c8fb6294eedb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4704232930832137666, guid: 18d3eeebb87f84543830c8fb6294eedb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4704232930832137666, guid: 18d3eeebb87f84543830c8fb6294eedb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4704232930832137666, guid: 18d3eeebb87f84543830c8fb6294eedb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4704232930832137666, guid: 18d3eeebb87f84543830c8fb6294eedb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4704232930832137666, guid: 18d3eeebb87f84543830c8fb6294eedb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4704232930832137666, guid: 18d3eeebb87f84543830c8fb6294eedb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4704232930832137666, guid: 18d3eeebb87f84543830c8fb6294eedb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901148916258886933, guid: 18d3eeebb87f84543830c8fb6294eedb, type: 3}
+      propertyPath: m_Name
+      value: Particle System
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 18d3eeebb87f84543830c8fb6294eedb, type: 3}
+--- !u!1 &1256993501 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4901148916258886933, guid: 18d3eeebb87f84543830c8fb6294eedb, type: 3}
+  m_PrefabInstance: {fileID: 1256993500}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1271224361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21500,6 +21657,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!54 &1271224367
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21684,6 +21842,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!23 &1274276553
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21932,6 +22091,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1302594320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22135,6 +22295,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1305076532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22338,6 +22499,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1 &1308049196
 GameObject:
   m_ObjectHideFlags: 0
@@ -22563,6 +22725,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!54 &1309663185
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22793,6 +22956,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1317088392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22996,6 +23160,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1334804541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23199,6 +23364,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1335871514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23356,6 +23522,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!23 &1335871519
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23635,6 +23802,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1379540404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23838,6 +24006,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1386356657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24041,6 +24210,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1406925141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24244,6 +24414,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1413631287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24447,6 +24618,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1416872472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24650,6 +24822,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1 &1421574646
 GameObject:
   m_ObjectHideFlags: 0
@@ -24857,6 +25030,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!54 &1433655324
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25085,6 +25259,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!95 &1434413874
 Animator:
   serializedVersion: 7
@@ -25310,6 +25485,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1455855564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25513,6 +25689,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 6339462121782074550, guid: 6a97044eebb156940886482bdbbfddc6, type: 3}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1458513485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25716,6 +25893,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1463628046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25919,6 +26097,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1464033842
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26122,6 +26301,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1 &1470270249
 GameObject:
   m_ObjectHideFlags: 0
@@ -26357,6 +26537,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1506459959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26560,6 +26741,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1510126204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26763,6 +26945,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1534684304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26966,6 +27149,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1567150565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27142,6 +27326,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!54 &1567150571
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27372,6 +27557,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1573787864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27575,6 +27761,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1589035451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27778,6 +27965,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1592812300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27954,6 +28142,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!54 &1592812306
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28292,6 +28481,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1644214551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28495,6 +28685,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1 &1654994779
 GameObject:
   m_ObjectHideFlags: 0
@@ -28732,6 +28923,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1 &1683217628
 GameObject:
   m_ObjectHideFlags: 0
@@ -29010,6 +29202,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1707732538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29213,6 +29406,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1710338954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29370,6 +29564,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!23 &1710338959
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29618,6 +29813,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1733686306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29821,6 +30017,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1737688494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29978,6 +30175,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!23 &1737688499
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30334,6 +30532,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1779577957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30537,6 +30736,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1 &1810665454
 GameObject:
   m_ObjectHideFlags: 0
@@ -30787,6 +30987,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1841605631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30990,6 +31191,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1843919548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31193,6 +31395,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1849401272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31396,6 +31599,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1851317462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31599,6 +31803,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1868721804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31802,6 +32007,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1871695374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32005,6 +32211,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1880831397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32208,6 +32415,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1 &1885279027
 GameObject:
   m_ObjectHideFlags: 0
@@ -32520,6 +32728,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!54 &1890909919
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -32750,6 +32959,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1907567634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32953,6 +33163,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1 &1925902455
 GameObject:
   m_ObjectHideFlags: 0
@@ -33258,6 +33469,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1942771679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33461,6 +33673,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1948535099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33664,6 +33877,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1951512793
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33867,6 +34081,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &1951999041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34070,6 +34285,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1 &1984376060
 GameObject:
   m_ObjectHideFlags: 0
@@ -34432,6 +34648,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &2005543171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34608,6 +34825,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!54 &2005543177
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34883,6 +35101,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &2040230855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35086,6 +35305,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &2064478540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35289,6 +35509,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &2088821249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35492,6 +35713,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1001 &2098839965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35695,6 +35917,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1 &2108093424
 GameObject:
   m_ObjectHideFlags: 0
@@ -35973,6 +36196,7 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
   powerUpPrefab: {fileID: 0}
+  destroyParticlesPrefab: {fileID: 1256993501}
 --- !u!1 &2140999257
 GameObject:
   m_ObjectHideFlags: 0
@@ -36093,3 +36317,4 @@ SceneRoots:
   - {fileID: 1810665456}
   - {fileID: 1367365132}
   - {fileID: 2140999260}
+  - {fileID: 1256993500}
