@@ -41,6 +41,8 @@ public class PalaMov : MonoBehaviour
 
     void Start()
     {
+        FindObjectOfType<UIManager>().HideNextLevelText();
+
         originalSize = transform.localScale.x;
         rend = GetComponent<Renderer>();
         if (normalMaterial != null)
@@ -191,6 +193,7 @@ public class PalaMov : MonoBehaviour
 
                 bool isPowerBall = ballMov.isPowerBall;
                 bool isIman = ballMov.isImant;
+                bool godMode = ballMov.godMode;
 
                 if (rb != null && ballMov != null)
                 {
@@ -199,8 +202,8 @@ public class PalaMov : MonoBehaviour
 
                     // Crea dues noves boles amb angles diferents
                     //CreateExtraBall(b.transform.position, Quaternion.Euler(0, 0, 0) * dir, speed);
-                    CreateExtraBall(b.transform.position, Quaternion.Euler(0, 20, 0) * dir, speed, isPowerBall, isIman);
-                    CreateExtraBall(b.transform.position, Quaternion.Euler(0, -20, 0) * dir, speed, isPowerBall, isIman);
+                    CreateExtraBall(b.transform.position, Quaternion.Euler(0, 20, 0) * dir, speed, isPowerBall, isIman, godMode);
+                    CreateExtraBall(b.transform.position, Quaternion.Euler(0, -20, 0) * dir, speed, isPowerBall, isIman, godMode);
                 }
             }
 
@@ -296,6 +299,7 @@ public class PalaMov : MonoBehaviour
 
             Destroy(other.gameObject);
         }
+
         else if (other.CompareTag("NextLevel"))
         {
             if (PowerUpSound != null && sfxMixerGroup != null)
@@ -303,25 +307,47 @@ public class PalaMov : MonoBehaviour
                 AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
             }
 
-            string[] sceneOrder = { "Level01", "Level02", "Level03", "Level04", "Level05", "WinScreen"};
-            string currentScene = SceneManager.GetActiveScene().name;
-
-            int index = System.Array.IndexOf(sceneOrder, currentScene);
-            if (index >= 0 && index < sceneOrder.Length - 1)
+            // Deixa estàtiques totes les boles (amb el tag "Ball")
+            GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
+            foreach (GameObject ball in balls)
             {
-                // Carrega la següent escena de la llista
-                SceneManager.LoadScene(sceneOrder[index + 1]);
-            }
-            else
-            {
-                Debug.LogWarning("Escena actual no trobada o ja a la darrera escena.");
+                Rigidbody rb = ball.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    rb.linearVelocity = Vector3.zero;
+                    rb.angularVelocity = Vector3.zero;
+                    rb.isKinematic = true; // Opcional: bloqueja la física totalment
+                }
+                
             }
 
-            Destroy(other.gameObject); // Destrueix la clau després d'usar-la
+            Destroy(other.gameObject); // Elimina la clau ara
+
+            FindObjectOfType<UIManager>().ShowNextLevelTextFade();
+            StartCoroutine(WaitAndLoadNextLevel(1.5f));
         }
     }
 
-    void CreateExtraBall(Vector3 position, Vector3 direction, float speed, bool isPowerBall, bool isIman)
+    IEnumerator WaitAndLoadNextLevel(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        FindObjectOfType<UIManager>().HideNextLevelTextFade();
+
+        string[] sceneOrder = { "Level01", "Level02", "Level03", "Level04", "Level05", "WinScreen" };
+        string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+
+        int index = System.Array.IndexOf(sceneOrder, currentScene);
+        if (index >= 0 && index < sceneOrder.Length - 1)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneOrder[index + 1]);
+        }
+        else
+        {
+            Debug.LogWarning("Escena actual no trobada o ja a la darrera escena.");
+        }
+    }
+
+    void CreateExtraBall(Vector3 position, Vector3 direction, float speed, bool isPowerBall, bool isIman, bool godMode)
     {
         GameObject newBall = Instantiate(ball, position, Quaternion.identity);
         Rigidbody rb = newBall.GetComponent<Rigidbody>();
@@ -334,6 +360,7 @@ public class PalaMov : MonoBehaviour
             ballMov.isExtraBall = true;
             ballMov.originPosition = position;
             ballMov.isImant = isIman;
+            ballMov.godMode = godMode;
 
             rb.linearVelocity = ballMov.direccion * speed;
 

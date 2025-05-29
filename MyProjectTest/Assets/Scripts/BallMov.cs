@@ -6,6 +6,8 @@ using UnityEngine.Audio;
 
 public class BallMov : MonoBehaviour
 {
+    public bool godMode = false;
+
     public AudioClip bounceSound;
     public AudioClip wallSound;
     public AudioMixerGroup sfxMixerGroup;
@@ -143,6 +145,12 @@ public class BallMov : MonoBehaviour
                 }
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            godMode = !godMode;
+            Debug.Log("GodMode " + (godMode ? "activat!" : "desactivat!"));
+        }
     }
 
     void LateUpdate()
@@ -158,6 +166,19 @@ public class BallMov : MonoBehaviour
     {
         if (isLaunched)
         {
+            if (godMode && transform.position.z < -8f)
+            {
+                Vector3 pos = transform.position;
+                pos.z = -7.6f;
+                transform.position = pos;
+
+                Vector3 vel = rb.linearVelocity;
+                // Inverteix la direcció Z per rebotar (com si fos una pala gegant)
+                vel.z = Mathf.Abs(vel.z); // assegura que va cap amunt
+                rb.linearVelocity = vel;
+            }
+
+
             direccion = rb.linearVelocity.normalized;
             direccion = EnforceMinRebound(direccion, 0.2f, 0.2f, 0.7f);
             rb.linearVelocity = direccion * speed;

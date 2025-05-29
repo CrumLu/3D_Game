@@ -150,13 +150,29 @@ public class GameManager : MonoBehaviour
 
         if (!LevelCompleted && bricks.Length == 0)
         {
+            // Deixa estàtiques totes les boles (amb el tag "Ball")
+            GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
+            foreach (GameObject ball in balls)
+            {
+                Rigidbody rb = ball.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    rb.linearVelocity = Vector3.zero;
+                    rb.angularVelocity = Vector3.zero;
+                    rb.isKinematic = true; // Opcional: bloqueja la física totalment
+                }
+            }
+
             LevelCompleted = true;
+            FindObjectOfType<UIManager>().ShowNextLevelTextFade();
             Invoke("LoadNextLevel", 1.5f);
         }
     }
 
     void LoadNextLevel()
     {
+        FindObjectOfType<UIManager>().HideNextLevelTextFade();
+
         string currentScene = SceneManager.GetActiveScene().name;
         int index = System.Array.IndexOf(SceneOrder, currentScene);
         if (index >= 0 && index < SceneOrder.Length - 1)

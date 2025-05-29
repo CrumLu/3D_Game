@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class UIManager : MonoBehaviour
 {
-	public TextMeshProUGUI tvides;
+    public TextMeshProUGUI nextLevelText;
+
+    public TextMeshProUGUI tvides;
 
     public TextMeshProUGUI tscore;
 
@@ -42,4 +45,72 @@ public class UIManager : MonoBehaviour
 			Debug.LogWarning("No s'ha trobat GameManager per actualitzar les vides.");
 		}
 	}
+
+    public void ShowNextLevelText()
+    {
+        if (nextLevelText != null)
+            nextLevelText.gameObject.SetActive(true);
+    }
+
+    public void HideNextLevelText()
+    {
+        if (nextLevelText != null)
+            nextLevelText.gameObject.SetActive(false);
+    }
+
+    public void ShowNextLevelTextFade(float fadeDuration = 0.7f)
+    {
+        if (nextLevelText != null)
+        {
+            nextLevelText.gameObject.SetActive(true);
+            StartCoroutine(FadeInNextLevelText(fadeDuration));
+        }
+    }
+
+    private IEnumerator FadeInNextLevelText(float duration)
+    {
+        Color c = nextLevelText.color;
+        c.a = 0f;
+        nextLevelText.color = c;
+
+        float timer = 0f;
+        while (timer < duration)
+        {
+            float t = timer / duration;
+            c.a = Mathf.Lerp(0, 1, t);
+            nextLevelText.color = c;
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        // Assegura alpha = 1
+        c.a = 1f;
+        nextLevelText.color = c;
+    }
+
+
+    public void HideNextLevelTextFade(float fadeDuration = 0.5f)
+    {
+        if (nextLevelText != null)
+            StartCoroutine(FadeOutNextLevelText(fadeDuration));
+    }
+
+    private IEnumerator FadeOutNextLevelText(float duration)
+    {
+        Color c = nextLevelText.color;
+        float startAlpha = c.a;
+
+        float timer = 0f;
+        while (timer < duration)
+        {
+            float t = timer / duration;
+            c.a = Mathf.Lerp(startAlpha, 0, t);
+            nextLevelText.color = c;
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        // Assegura alpha = 0
+        c.a = 0f;
+        nextLevelText.color = c;
+        nextLevelText.gameObject.SetActive(false);
+    }
 }
