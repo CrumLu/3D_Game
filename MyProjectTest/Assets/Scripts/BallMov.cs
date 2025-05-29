@@ -83,10 +83,17 @@ public class BallMov : MonoBehaviour
 
     void Update()
     {
-        if (CameraIntroController.introFinished)
+        CameraIntroController controller = FindObjectOfType<CameraIntroController>();
+        if (controller != null && controller.introFinished)
         {
             if (!isLaunched && palaTransform != null)
             {
+                UIManager ui = FindObjectOfType<UIManager>();
+                if (ui != null)
+                {
+                    ui.DefaultPowerUpText();
+                }
+
                 if (!isExtraBall)
                 {
                     transform.position = palaTransform.position + offsetToPala;
@@ -180,7 +187,7 @@ public class BallMov : MonoBehaviour
 
 
             direccion = rb.linearVelocity.normalized;
-            direccion = EnforceMinRebound(direccion, 0.2f, 0.2f, 0.7f);
+            direccion = EnforceMinRebound(direccion, 0.2f, 0.2f, 15f);
             rb.linearVelocity = direccion * speed;
         }
     }
@@ -266,7 +273,7 @@ public class BallMov : MonoBehaviour
                     float normalizedOffset = offset / (width / 2);
 
                     direccion = new Vector3(normalizedOffset, 0, 1).normalized;
-                    direccion = EnforceMinRebound(direccion, 0.2f, 0.2f, 0.6f);
+                    direccion = EnforceMinRebound(direccion, 0.2f, 0.2f, 15f);
                     rb.linearVelocity = direccion * speed;
                 }
             }

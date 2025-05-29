@@ -12,6 +12,40 @@ public class UIManager : MonoBehaviour
 
 	public TextMeshProUGUI tmaxscore;
 
+    public TextMeshProUGUI tpowerup;
+    private Coroutine powerUpCoroutine = null; // Guarda la corutina actual
+
+    public void DefaultPowerUpText()
+    {
+        if (tpowerup != null)
+        {
+            tpowerup.text = "P-UP: ";
+        }
+    }
+
+    public void UpdatePowerUp(string powerUpName)
+    {
+        if (tpowerup != null)
+        {
+            tpowerup.text = "P-UP: " + powerUpName;
+
+            // Atura la corutina anterior si existeix
+            if (powerUpCoroutine != null)
+                StopCoroutine(powerUpCoroutine);
+
+            powerUpCoroutine = StartCoroutine(ClearPowerUpTextAfterDelay(2f));
+        }
+    }
+
+    private IEnumerator ClearPowerUpTextAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (tpowerup != null)
+            tpowerup.text = "P-UP: ";
+        powerUpCoroutine = null; // Reseteja la referència
+    }
+
+
     public void UpdateLives(int vides)
 	{
 		if (tvides != null && vides != -1)

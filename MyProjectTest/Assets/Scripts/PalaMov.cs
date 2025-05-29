@@ -52,7 +52,8 @@ public class PalaMov : MonoBehaviour
 
     void Update()
     {
-        if (CameraIntroController.introFinished)
+        CameraIntroController controller = FindObjectOfType<CameraIntroController>();
+        if (controller != null && controller.introFinished)
         {
             size = transform.localScale.x;
 
@@ -122,6 +123,13 @@ public class PalaMov : MonoBehaviour
                 AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
             }
 
+
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdatePowerUp("Augmentar");
+            }
+
             // Augmenta escala
             Vector3 scale = transform.localScale;
             scale.x += scaleChange;
@@ -147,6 +155,12 @@ public class PalaMov : MonoBehaviour
                 AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
             }
 
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdatePowerUp("Disminuir");
+            }
+
             // Disminueix escala
             Vector3 scale = transform.localScale;
             scale.x -= scaleChange;
@@ -168,6 +182,12 @@ public class PalaMov : MonoBehaviour
                 AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
             }
 
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdatePowerUp("PowerBall");
+            }
+
             BallMov ballScript = ball.GetComponent<BallMov>();
             if (ballScript != null)
             {
@@ -182,6 +202,12 @@ public class PalaMov : MonoBehaviour
             if (PowerUpSound != null && sfxMixerGroup != null)
             {
                 AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }
+
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdatePowerUp("ExtraBall");
             }
 
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
@@ -216,6 +242,12 @@ public class PalaMov : MonoBehaviour
                 AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
             }
 
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdatePowerUp("Imant");
+            }
+
             rend.material = imantMaterial; // Canvia el material de la pala a l'imant
 
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
@@ -243,6 +275,12 @@ public class PalaMov : MonoBehaviour
                 AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
             }
 
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdatePowerUp("NormalBall");
+            }
+
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
 
             foreach (GameObject b in balls)
@@ -266,6 +304,12 @@ public class PalaMov : MonoBehaviour
                 AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
             }
 
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdatePowerUp("FastBall");
+            }
+
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
             foreach (GameObject b in balls)
             {
@@ -285,6 +329,11 @@ public class PalaMov : MonoBehaviour
                 AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
             }
 
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdatePowerUp("SlowBall");
+            }
 
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
 
@@ -305,6 +354,12 @@ public class PalaMov : MonoBehaviour
             if (PowerUpSound != null && sfxMixerGroup != null)
             {
                 AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }
+
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdatePowerUp("NextLevel");
             }
 
             // Deixa estàtiques totes les boles (amb el tag "Ball")

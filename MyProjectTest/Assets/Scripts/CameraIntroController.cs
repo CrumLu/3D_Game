@@ -13,7 +13,7 @@ public class CameraIntroController : MonoBehaviour
     public Vector3 finalEulerAngles = new Vector3(47.327f, -0.527f, 0.062f);
 
 
-    public static bool introFinished = false;
+    public bool introFinished = false;
 
     void Start()
     {
