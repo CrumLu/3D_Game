@@ -7,7 +7,7 @@ public class BrickMov : MonoBehaviour
     public AudioClip breakSound;
     public AudioMixerGroup sfxMixerGroup;
 
-    public GameObject powerUpPrefab; // només un prefab a assignar
+    public GameObject powerUpPrefab; // nomï¿½s un prefab a assignar
     public GameObject destroyParticlesPrefab;
 
     private void OnCollisionEnter(Collision collision)
@@ -39,7 +39,7 @@ public class BrickMov : MonoBehaviour
             Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
         }
 
-        // Notificar el LevelManager que aquest brick ha estat destruït
+        // Notificar el LevelManager que aquest brick ha estat destruï¿½t
         LevelManager levelManager = FindObjectOfType<LevelManager>();
         if (levelManager != null)
         {
@@ -54,4 +54,5 @@ public class BrickMov : MonoBehaviour
         }
         Destroy(gameObject);
     }
+
 }

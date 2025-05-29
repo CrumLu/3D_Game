@@ -9399,6 +9399,7 @@ MonoBehaviour:
   startRadiusOffset: 20
   finalPosition: {x: 0.0307231, y: 17.9938, z: -10.6936}
   finalEulerAngles: {x: 47.327, y: -0.527, z: 0.062}
+  introFinished: 0
 --- !u!1001 &966151714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10180,6 +10181,7 @@ MonoBehaviour:
   tvides: {fileID: 1351718923}
   tscore: {fileID: 708646894}
   tmaxscore: {fileID: 0}
+  tpowerup: {fileID: 1864439165}
 --- !u!4 &1017752424
 Transform:
   m_ObjectHideFlags: 0
@@ -21074,7 +21076,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -201.47073, y: 0, z: -33.5522, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -23490,15 +23492,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4174114150963174836, guid: 7d09acfbcb0b5bf499637fb3c5e30fb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.25
+      value: 3.65
       objectReference: {fileID: 0}
     - target: {fileID: 4174114150963174836, guid: 7d09acfbcb0b5bf499637fb3c5e30fb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.56
+      value: 9.6
       objectReference: {fileID: 0}
     - target: {fileID: 4174114150963174836, guid: 7d09acfbcb0b5bf499637fb3c5e30fb6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.97
+      value: -7.75
       objectReference: {fileID: 0}
     - target: {fileID: 4174114150963174836, guid: 7d09acfbcb0b5bf499637fb3c5e30fb6, type: 3}
       propertyPath: m_LocalRotation.w

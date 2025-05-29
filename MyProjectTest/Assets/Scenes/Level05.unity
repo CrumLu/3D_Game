@@ -12729,6 +12729,7 @@ MonoBehaviour:
   tvides: {fileID: 1351718923}
   tscore: {fileID: 708646894}
   tmaxscore: {fileID: 0}
+  tpowerup: {fileID: 1864439165}
 --- !u!4 &619460362
 Transform:
   m_ObjectHideFlags: 0
@@ -21847,6 +21848,7 @@ MonoBehaviour:
   startRadiusOffset: 20
   finalPosition: {x: 0.0307231, y: 17.9938, z: -10.6936}
   finalEulerAngles: {x: 47.327, y: -0.527, z: 0.062}
+  introFinished: 0
 --- !u!1 &964923974 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7abce7ec197ec744eaf7dc502b1e5172, type: 3}
@@ -24526,7 +24528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8a36e743a9fb494b8b7992b63ef5ea5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.6
+      value: -7.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8a36e743a9fb494b8b7992b63ef5ea5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -41595,7 +41597,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -194.99625, y: 0, z: -30.873764, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
