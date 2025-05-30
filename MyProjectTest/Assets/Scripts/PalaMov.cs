@@ -381,6 +381,29 @@ public class PalaMov : MonoBehaviour
             FindObjectOfType<UIManager>().ShowNextLevelTextFade();
             StartCoroutine(WaitAndLoadNextLevel(1.5f));
         }
+
+        else if (other.CompareTag("VidaExtra"))
+        {
+            if (PowerUpSound != null && sfxMixerGroup != null)
+            {
+                AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }
+
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdatePowerUp("VidaExtra");
+            }
+
+            GameManager gm = FindObjectOfType<GameManager>();
+
+            if (gm != null)
+            {
+                gm.SumaVidas();
+            }
+
+            Destroy(other.gameObject);
+        }
     }
 
     IEnumerator WaitAndLoadNextLevel(float waitTime)

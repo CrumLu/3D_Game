@@ -185,8 +185,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4287944447
-  m_fontColor: {r: 1, g: 0.8392157, b: 0.5803922, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7490,8 +7490,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4287944447
-  m_fontColor: {r: 1, g: 0.8392157, b: 0.5803922, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -14233,8 +14233,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4287944447
-  m_fontColor: {r: 1, g: 0.8392157, b: 0.5803922, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -17304,7 +17304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakSound: {fileID: 8300000, guid: 1cd5d34e80cca78489182049464c623a, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
-  powerUpPrefab: {fileID: 0}
+  powerUpPrefab: {fileID: 4746860117010986975, guid: 90c40ce23e810344b9bdf43de70d5d6f, type: 3}
   destroyParticlesPrefab: {fileID: 8929875404024430912}
 --- !u!65 &1566233815
 BoxCollider:
@@ -21020,8 +21020,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4287944447
-  m_fontColor: {r: 1, g: 0.83921576, b: 0.5803922, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
