@@ -20,6 +20,7 @@ TagManager:
   - ParetHorizontal
   - ParetVertical
   - NextLevel
+  - VidaExtra
   layers:
   - Default
   - TransparentFX

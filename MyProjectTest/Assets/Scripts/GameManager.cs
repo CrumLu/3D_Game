@@ -24,7 +24,16 @@ public class GameManager : MonoBehaviour
             ui.UpdateScore(scoreActual);
     }
 
+    public void SumaVidas()
+    {
+        vides++;
 
+        UIManager ui = FindObjectOfType<UIManager>();
+        if (ui != null)
+        {
+            ui.UpdateLives(vides - 1);
+        }
+    }
 
     void Awake()
     {
