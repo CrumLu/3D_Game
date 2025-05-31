@@ -130,6 +130,8 @@ public class PalaMov : MonoBehaviour
                 ui.UpdatePowerUp("Augmentar");
             }
 
+            GameManager.instance.ActualizaPuntuacion(500);
+
             // Augmenta escala
             Vector3 scale = transform.localScale;
             scale.x += scaleChange;
@@ -161,6 +163,8 @@ public class PalaMov : MonoBehaviour
                 ui.UpdatePowerUp("Disminuir");
             }
 
+            GameManager.instance.ActualizaPuntuacion(750);
+
             // Disminueix escala
             Vector3 scale = transform.localScale;
             scale.x -= scaleChange;
@@ -188,6 +192,8 @@ public class PalaMov : MonoBehaviour
                 ui.UpdatePowerUp("PowerBall");
             }
 
+            GameManager.instance.ActualizaPuntuacion(300);
+
             BallMov ballScript = ball.GetComponent<BallMov>();
             if (ballScript != null)
             {
@@ -209,6 +215,8 @@ public class PalaMov : MonoBehaviour
             {
                 ui.UpdatePowerUp("ExtraBall");
             }
+
+            GameManager.instance.ActualizaPuntuacion(300);
 
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
 
@@ -248,6 +256,8 @@ public class PalaMov : MonoBehaviour
                 ui.UpdatePowerUp("Imant");
             }
 
+            GameManager.instance.ActualizaPuntuacion(500);
+
             rend.material = imantMaterial; // Canvia el material de la pala a l'imant
 
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
@@ -281,6 +291,8 @@ public class PalaMov : MonoBehaviour
                 ui.UpdatePowerUp("NormalBall");
             }
 
+            GameManager.instance.ActualizaPuntuacion(1000);
+
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
 
             foreach (GameObject b in balls)
@@ -310,6 +322,8 @@ public class PalaMov : MonoBehaviour
                 ui.UpdatePowerUp("FastBall");
             }
 
+            GameManager.instance.ActualizaPuntuacion(400);
+
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
             foreach (GameObject b in balls)
             {
@@ -334,6 +348,8 @@ public class PalaMov : MonoBehaviour
             {
                 ui.UpdatePowerUp("SlowBall");
             }
+
+            GameManager.instance.ActualizaPuntuacion(750);
 
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
 
@@ -361,6 +377,8 @@ public class PalaMov : MonoBehaviour
             {
                 ui.UpdatePowerUp("NextLevel");
             }
+
+            GameManager.instance.ActualizaPuntuacion(1500);
 
             // Deixa estàtiques totes les boles (amb el tag "Ball")
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
@@ -394,6 +412,8 @@ public class PalaMov : MonoBehaviour
             {
                 ui.UpdatePowerUp("VidaExtra");
             }
+
+            GameManager.instance.ActualizaPuntuacion(250);
 
             GameManager gm = FindObjectOfType<GameManager>();
 
