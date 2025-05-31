@@ -9,7 +9,7 @@ public class PalaMov : MonoBehaviour
     public AudioMixerGroup sfxMixerGroup;
 
 
-    public float scaleChange = 3.0f; //POWER-UP de augmentar
+    public float scaleChange = 1.5f; //POWER-UP de augmentar
     public GameObject ball; // assigna la pilota manualment al inspector
 
     public KeyCode left;
