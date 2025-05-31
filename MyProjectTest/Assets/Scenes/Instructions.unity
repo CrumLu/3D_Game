@@ -276,7 +276,7 @@ MonoBehaviour:
   m_text: 'PowerBall
 
 
-    Bonus: 1500p'
+    Bonus: 300p'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
   m_sharedMaterial: {fileID: -3492229961430972474, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
@@ -727,7 +727,7 @@ MonoBehaviour:
   m_text: 'Speed-Up
 
 
-    Bonus: 1500p'
+    Bonus: 400p'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
   m_sharedMaterial: {fileID: -3492229961430972474, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
@@ -1095,7 +1095,7 @@ MonoBehaviour:
   m_text: 'NormalBall
 
 
-    Bonus: 1500p'
+    Bonus: 1000p'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
   m_sharedMaterial: {fileID: -3492229961430972474, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
@@ -1520,7 +1520,7 @@ MonoBehaviour:
   m_text: 'Big Bat
 
 
-    Bonus: 1500p'
+    Bonus: 500p'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
   m_sharedMaterial: {fileID: -3492229961430972474, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
@@ -1996,7 +1996,7 @@ MonoBehaviour:
   m_text: 'Small Bat
 
 
-    Bonus: 1500p'
+    Bonus: 750p'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
   m_sharedMaterial: {fileID: -3492229961430972474, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
@@ -2210,7 +2210,7 @@ MonoBehaviour:
   m_text: 'Speed-Down
 
 
-    Bonus: 1500p'
+    Bonus: 750p'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
   m_sharedMaterial: {fileID: -3492229961430972474, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
@@ -2475,7 +2475,7 @@ MonoBehaviour:
   m_text: 'Extra Life
 
 
-    Bonus: 1500p'
+    Bonus: 250p'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
   m_sharedMaterial: {fileID: -3492229961430972474, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
@@ -2689,7 +2689,7 @@ MonoBehaviour:
   m_text: '2 ExtraBalls
 
 
-    Bonus: 1500p'
+    Bonus: 300p'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
   m_sharedMaterial: {fileID: -3492229961430972474, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
@@ -2978,7 +2978,7 @@ MonoBehaviour:
   m_text: 'Magnet
 
 
-    Bonus: 1500p'
+    Bonus: 500p'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
   m_sharedMaterial: {fileID: -3492229961430972474, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
