@@ -1710,7 +1710,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 723, y: -306}
+  m_AnchoredPosition: {x: 723, y: -290}
   m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1228578056
@@ -3516,7 +3516,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 166}
+  m_AnchoredPosition: {x: 0, y: 150}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2126627101
@@ -3542,7 +3542,7 @@ MonoBehaviour:
   m_text: Pulsa "Espacio" para despegar la concha de la paleta. Utiliza las flechas
     de direccion izquierda y derecha para mover la paleta. Pulsa la tecla 'g' para
     activar el god mode y usa las teclas '1', '2', '3', '4', '5' para seleccionar
-    que nivel quieres jugar.
+    que nivel quieres jugar. Pulsa '8' para volver al menu.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
   m_sharedMaterial: {fileID: -3492229961430972474, guid: 18ad11c1584c60c4e842aeaed609eec2, type: 2}
