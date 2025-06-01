@@ -153,6 +153,14 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("Level05");
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha8)) //aixo es pel video
+        {
+            SceneManager.LoadScene("WinScreen");
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha9)) //aixo es pel video
+        {
+            SceneManager.LoadScene("GameOver");
+        }
 
         GameObject[] bricks = GameObject.FindGameObjectsWithTag("Brick");
         Debug.Log("Bloques restantes: " + bricks.Length);
