@@ -18959,7 +18959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PowerUpSound: {fileID: 8300000, guid: 297dbc1e291a2d94a843caf1d36debc7, type: 3}
   sfxMixerGroup: {fileID: 7461479314868972082, guid: 8721129f7ae6cc349a6cc5def451d396, type: 2}
-  scaleChange: 3
+  scaleChange: 1.5
   ball: {fileID: 1698360340}
   left: 276
   right: 275
