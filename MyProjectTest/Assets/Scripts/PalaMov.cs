@@ -1,18 +1,33 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class PalaMov : MonoBehaviour
 {
-    public float scaleChange = 3.0f; //POWER-UP de augmentar
+    public AudioClip PowerUpSound;
+    public AudioMixerGroup sfxMixerGroup;
+
+
+    public float scaleChange = 1.5f; //POWER-UP de augmentar
     public GameObject ball; // assigna la pilota manualment al inspector
 
     public KeyCode left;
     public KeyCode right;
 
+    public Material imantMaterial;
+    public Material normalMaterial;
+    private Renderer rend;
+
     public float size;
 
     private float originalSize;
     private Coroutine revertCoroutine;
+
+    // Vides
+    public int vides = 3;
+    public Vector3 ballStartOffset = new Vector3(0, -0.45f, 0.75f);
+
 
 
     enum State
@@ -26,27 +41,37 @@ public class PalaMov : MonoBehaviour
 
     void Start()
     {
+        FindObjectOfType<UIManager>().HideNextLevelText();
+
         originalSize = transform.localScale.x;
+        rend = GetComponent<Renderer>();
+        if (normalMaterial != null)
+            rend.material = normalMaterial;
+        //palaTransform = this.transform;
     }
 
     void Update()
     {
-        size = transform.localScale.x;
+        CameraIntroController controller = FindObjectOfType<CameraIntroController>();
+        if (controller != null && controller.introFinished)
+        {
+            size = transform.localScale.x;
 
-        if (Input.GetKey(left))
-        {
-            state = State.left;
-        }
-        else if (Input.GetKey(right))
-        {
-            state = State.right;
-        }
-        else
-        {
-            state = State.stop;
-        }
+            if (Input.GetKey(left))
+            {
+                state = State.left;
+            }
+            else if (Input.GetKey(right))
+            {
+                state = State.right;
+            }
+            else
+            {
+                state = State.stop;
+            }
 
-        Move();
+            Move();
+        }
     }
 
     void Move()
@@ -63,16 +88,56 @@ public class PalaMov : MonoBehaviour
         {
             transform.Translate(moveSpeed, 0, 0);
         }
+        //Debug.Log("Comprobación: " + size);
+    }
+
+    public void ActivateImantVisual()
+    {
+        if (rend != null && imantMaterial != null)
+        {
+            rend.material = imantMaterial; 
+        }
+        StartCoroutine(ResetImantVisualAfterDelay(10f));
+    }
+
+    public void DeactivateImantVisual()
+    {
+        if (rend != null && normalMaterial != null)
+        {
+            rend.material = normalMaterial;
+        }
+    }
+
+    IEnumerator ResetImantVisualAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        DeactivateImantVisual();
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Augmentar"))
         {
+            if (PowerUpSound != null && sfxMixerGroup != null)
+            {
+                AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }
+
+
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdatePowerUp("Augmentar");
+            }
+
+            GameManager.instance.ActualizaPuntuacion(500);
+
             // Augmenta escala
             Vector3 scale = transform.localScale;
             scale.x += scaleChange;
             transform.localScale = scale;
+
+            //Debug.Log("New scale: " + scale.x);
 
             // Recalcula l�mit m�xim basat en el nou tamany
             size = scale.x;
@@ -87,6 +152,19 @@ public class PalaMov : MonoBehaviour
         }
         else if (other.CompareTag("Disminuir"))
         {
+            if (PowerUpSound != null && sfxMixerGroup != null)
+            {
+                AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }
+
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdatePowerUp("Disminuir");
+            }
+
+            GameManager.instance.ActualizaPuntuacion(750);
+
             // Disminueix escala
             Vector3 scale = transform.localScale;
             scale.x -= scaleChange;
@@ -103,6 +181,19 @@ public class PalaMov : MonoBehaviour
         }
         else if (other.CompareTag("PowerBall"))
         {
+            if (PowerUpSound != null && sfxMixerGroup != null)
+            {
+                AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }
+
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdatePowerUp("PowerBall");
+            }
+
+            GameManager.instance.ActualizaPuntuacion(300);
+
             BallMov ballScript = ball.GetComponent<BallMov>();
             if (ballScript != null)
             {
@@ -114,6 +205,19 @@ public class PalaMov : MonoBehaviour
 
         else if (other.CompareTag("ExtraBall"))
         {
+            if (PowerUpSound != null && sfxMixerGroup != null)
+            {
+                AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }
+
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdatePowerUp("ExtraBall");
+            }
+
+            GameManager.instance.ActualizaPuntuacion(300);
+
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
 
             foreach (GameObject b in balls)
@@ -123,6 +227,7 @@ public class PalaMov : MonoBehaviour
 
                 bool isPowerBall = ballMov.isPowerBall;
                 bool isIman = ballMov.isImant;
+                bool godMode = ballMov.godMode;
 
                 if (rb != null && ballMov != null)
                 {
@@ -131,8 +236,8 @@ public class PalaMov : MonoBehaviour
 
                     // Crea dues noves boles amb angles diferents
                     //CreateExtraBall(b.transform.position, Quaternion.Euler(0, 0, 0) * dir, speed);
-                    CreateExtraBall(b.transform.position, Quaternion.Euler(0, 20, 0) * dir, speed, isPowerBall, isIman);
-                    CreateExtraBall(b.transform.position, Quaternion.Euler(0, -20, 0) * dir, speed, isPowerBall, isIman);
+                    CreateExtraBall(b.transform.position, Quaternion.Euler(0, 20, 0) * dir, speed, isPowerBall, isIman, godMode);
+                    CreateExtraBall(b.transform.position, Quaternion.Euler(0, -20, 0) * dir, speed, isPowerBall, isIman, godMode);
                 }
             }
 
@@ -140,6 +245,21 @@ public class PalaMov : MonoBehaviour
         }
         else if (other.CompareTag("Imant"))
         {
+            if (PowerUpSound != null && sfxMixerGroup != null)
+            {
+                AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }
+
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdatePowerUp("Imant");
+            }
+
+            GameManager.instance.ActualizaPuntuacion(500);
+
+            rend.material = imantMaterial; // Canvia el material de la pala a l'imant
+
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
 
             foreach (GameObject b in balls)
@@ -150,11 +270,29 @@ public class PalaMov : MonoBehaviour
                     ballScript.ActivateImant();
                 }
             }
+            PalaMov palaScript = GetComponent<PalaMov>();
+            if (palaScript != null)
+            {
+                palaScript.ActivateImantVisual();
+            }
 
             Destroy(other.gameObject);
         }
         else if (other.CompareTag("NormalBall"))
         {
+            if (PowerUpSound != null && sfxMixerGroup != null)
+            {
+                AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }
+
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdatePowerUp("NormalBall");
+            }
+
+            GameManager.instance.ActualizaPuntuacion(1000);
+
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
 
             foreach (GameObject b in balls)
@@ -173,6 +311,19 @@ public class PalaMov : MonoBehaviour
         // MILLORAR AMB EXTRA BALL I TOT
         else if (other.CompareTag("FastBall"))
         {
+            if (PowerUpSound != null && sfxMixerGroup != null)
+            {
+                AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }
+
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdatePowerUp("FastBall");
+            }
+
+            GameManager.instance.ActualizaPuntuacion(400);
+
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
             foreach (GameObject b in balls)
             {
@@ -187,6 +338,19 @@ public class PalaMov : MonoBehaviour
 
         else if (other.CompareTag("SlowBall"))
         {
+            if (PowerUpSound != null && sfxMixerGroup != null)
+            {
+                AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }
+
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdatePowerUp("SlowBall");
+            }
+
+            GameManager.instance.ActualizaPuntuacion(750);
+
             GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
 
             foreach (GameObject b in balls)
@@ -201,9 +365,87 @@ public class PalaMov : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+        else if (other.CompareTag("NextLevel"))
+        {
+            if (PowerUpSound != null && sfxMixerGroup != null)
+            {
+                AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }
+
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdatePowerUp("NextLevel");
+            }
+
+            GameManager.instance.ActualizaPuntuacion(1500);
+
+            // Deixa estàtiques totes les boles (amb el tag "Ball")
+            GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
+            foreach (GameObject ball in balls)
+            {
+                Rigidbody rb = ball.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    rb.linearVelocity = Vector3.zero;
+                    rb.angularVelocity = Vector3.zero;
+                    rb.isKinematic = true; // Opcional: bloqueja la física totalment
+                }
+                
+            }
+
+            Destroy(other.gameObject); // Elimina la clau ara
+
+            FindObjectOfType<UIManager>().ShowNextLevelTextFade();
+            StartCoroutine(WaitAndLoadNextLevel(1.5f));
+        }
+
+        else if (other.CompareTag("VidaExtra"))
+        {
+            if (PowerUpSound != null && sfxMixerGroup != null)
+            {
+                AudioSource.PlayClipAtPoint(PowerUpSound, transform.position, 1.0f);
+            }
+
+            UIManager ui = FindObjectOfType<UIManager>();
+            if (ui != null)
+            {
+                ui.UpdatePowerUp("VidaExtra");
+            }
+
+            GameManager.instance.ActualizaPuntuacion(250);
+
+            GameManager gm = FindObjectOfType<GameManager>();
+
+            if (gm != null)
+            {
+                gm.SumaVidas();
+            }
+
+            Destroy(other.gameObject);
+        }
     }
 
-    void CreateExtraBall(Vector3 position, Vector3 direction, float speed, bool isPowerBall, bool isIman)
+    IEnumerator WaitAndLoadNextLevel(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        FindObjectOfType<UIManager>().HideNextLevelTextFade();
+
+        string[] sceneOrder = { "Level01", "Level02", "Level03", "Level04", "Level05", "WinScreen" };
+        string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+
+        int index = System.Array.IndexOf(sceneOrder, currentScene);
+        if (index >= 0 && index < sceneOrder.Length - 1)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneOrder[index + 1]);
+        }
+        else
+        {
+            Debug.LogWarning("Escena actual no trobada o ja a la darrera escena.");
+        }
+    }
+
+    void CreateExtraBall(Vector3 position, Vector3 direction, float speed, bool isPowerBall, bool isIman, bool godMode)
     {
         GameObject newBall = Instantiate(ball, position, Quaternion.identity);
         Rigidbody rb = newBall.GetComponent<Rigidbody>();
@@ -211,16 +453,21 @@ public class PalaMov : MonoBehaviour
 
         if (rb != null && ballMov != null)
         {
-            //ballMov.startLaunched = true;
+            ballMov.direccion = direction.normalized; // Inicialitza direcció pública
             ballMov.isPowerBall = isPowerBall;
-            ballMov.isExtraBall = true; // per evitar que es quedi enganxada a la pala
+            ballMov.isExtraBall = true;
             ballMov.originPosition = position;
             ballMov.isImant = isIman;
+            ballMov.godMode = godMode;
 
-            rb.linearVelocity = direction.normalized * speed;
+            rb.linearVelocity = ballMov.direccion * speed;
 
-            if (!isPowerBall) newBall.GetComponent<Renderer>().material = ballMov.normalMaterial;
-            else newBall.GetComponent<Renderer>().material = ballMov.powerBallMaterial;
+            if (!isPowerBall)
+                newBall.GetComponent<Renderer>().material = ballMov.normalMaterial;
+            else
+                newBall.GetComponent<Renderer>().material = ballMov.powerBallMaterial;
         }
     }
+
+
 }

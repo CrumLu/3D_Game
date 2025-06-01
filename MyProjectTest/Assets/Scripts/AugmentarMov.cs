@@ -6,6 +6,8 @@ public class AugmentarMov : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(0, 0, -fallSpeed * Time.deltaTime);
+        transform.Rotate(0, 200f * Time.deltaTime, 0);
+        //transform.Translate(0, 0, -fallSpeed * Time.deltaTime);
+        transform.Translate(Vector3.back * fallSpeed * Time.deltaTime, Space.World);
     }
 }

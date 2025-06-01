@@ -1,9 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class BallMov : MonoBehaviour
 {
+    public bool godMode = false;
+
+    public AudioClip bounceSound;
+    public AudioClip wallSound;
+    public AudioMixerGroup sfxMixerGroup;
+
+
+    public GameObject pala;
+
+    // Direccion de la Ball
+    public Vector3 direccion;
+
+    private float collisionCooldown = 0.02f;  // Temps mínim entre col·lisions
+    private float lastCollisionTime = -1f;
+
+
     // Variables de SlowBall
     private Coroutine slowBallCoroutine;
     private float slowSpeed = 3f;
@@ -26,6 +44,7 @@ public class BallMov : MonoBehaviour
 
     // Variables de moviment
     public float speed = 7.0f;
+    private float normalSpeed = 7.0f; // velocitat normal de la bola
     private Rigidbody rb;
 
     // Variables del POWERBALL
@@ -36,9 +55,14 @@ public class BallMov : MonoBehaviour
     public Material normalMaterial;
 
     //Ball enganxada a la Pala
-    private bool isLaunched = false;
+    public bool isLaunched = false;
     private Transform palaTransform;
-    private Vector3 offsetToPala = new Vector3(0, 0, 0.75f); // ajustable segons la mida
+
+    private Vector3 offsetToPala = new Vector3(0, -0.4f, 0.75f); // ajustable segons la mida
+
+
+    public int vides = 3;
+    public bool ultimaBall = true;
 
     void Start()
     {
@@ -59,64 +83,88 @@ public class BallMov : MonoBehaviour
 
     void Update()
     {
-        if (!isLaunched && palaTransform != null)
+        CameraIntroController controller = FindObjectOfType<CameraIntroController>();
+        if (controller != null && controller.introFinished)
         {
-            if (!isExtraBall)
+            if (!isLaunched && palaTransform != null)
             {
-                transform.position = palaTransform.position + offsetToPala; 
+                UIManager ui = FindObjectOfType<UIManager>();
+                if (ui != null)
+                {
+                    ui.DefaultPowerUpText();
+                }
+
+                if (!isExtraBall)
+                {
+                    transform.position = palaTransform.position + offsetToPala;
+                }
+
+                if (Input.GetKeyDown(KeyCode.Space) || isExtraBall)
+                {
+                    if (isExtraBall)
+                    {
+                        float x = Random.Range(-1f, 1f);
+                        float z = Random.Range(0.5f, 1f);
+                        Vector3 randomDir = new Vector3(x, 0, z).normalized;
+                        rb.linearVelocity = randomDir * speed;
+                    }
+                    else
+                    {
+                        rb.linearVelocity = new Vector3(-1, 0, 1).normalized * speed;
+                    }
+
+                    isLaunched = true;
+                    //isImant = true;
+                }
             }
-
-            if (Input.GetKeyDown(KeyCode.Space) || isExtraBall)
+            // Si la bola és imant, s'enganxa a la pala
+            else if (siguePala)
             {
-                if (isExtraBall)
-                {
-                    float x = Random.Range(-1f, 1f);
-                    float z = Random.Range(0.5f, 1f);
-                    Vector3 randomDir = new Vector3(x, 0, z).normalized;
-                    rb.linearVelocity = randomDir * speed;
-                }
-                else
-                {
-                    rb.linearVelocity = new Vector3(-1, 0, 1).normalized * speed;
-                }
+                transform.position = palaTransform.position + imantOffset;
 
-                isLaunched = true;
-                //isImant = true;
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    if (isExtraBall)
+                    {
+                        float x = Random.Range(-1f, 1f);
+                        float z = Random.Range(0.5f, 1f);
+                        Vector3 randomDir = new Vector3(x, 0, z).normalized;
+                        rb.linearVelocity = randomDir * speed;
+                    }
+                    else
+                    {
+
+                        // Determina la direcció en funció de la posició relativa de la bola respecte a la pala
+                        float offset = imantOffset.x;
+
+                        Vector3 newDir;
+                        if (offset < -0.1f)
+                            newDir = new Vector3(-1, 0, 1);
+                        else if (offset > 0.1f)
+                            newDir = new Vector3(1, 0, 1);
+                        else
+                            newDir = new Vector3(0, 0, 1);
+
+                        rb.linearVelocity = newDir.normalized * speed;
+
+                    }
+                    siguePala = false; // Deixa de seguir la pala
+                }
             }
         }
-        // Si la bola és imant, s'enganxa a la pala
-        else if (siguePala)
+
+        if (Input.GetKeyDown(KeyCode.G))
         {
-            transform.position = palaTransform.position + imantOffset;
+            godMode = !godMode;
+            Debug.Log("GodMode " + (godMode ? "activat!" : "desactivat!"));
+        }
+    }
 
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                if (isExtraBall)
-                {
-                    float x = Random.Range(-1f, 1f);
-                    float z = Random.Range(0.5f, 1f);
-                    Vector3 randomDir = new Vector3(x, 0, z).normalized;
-                    rb.linearVelocity = randomDir * speed;
-                }
-                else
-                {
-                    
-                    // Determina la direcció en funció de la posició relativa de la bola respecte a la pala
-                    float offset = imantOffset.x;
-
-                    Vector3 newDir;
-                    if (offset < -0.1f)
-                        newDir = new Vector3(-1, 0, 1);
-                    else if (offset > 0.1f)
-                        newDir = new Vector3(1, 0, 1);
-                    else
-                        newDir = new Vector3(0, 0, 1);
-
-                    rb.linearVelocity = newDir.normalized * speed;
-                   
-                }
-                siguePala = false; // Deixa de seguir la pala
-            }
+    void LateUpdate()
+    {
+        if (transform.position.z <= -11f)
+        {
+            GameManager.instance.OnBallLost(gameObject); // La bola que cau AVISA el GameManager
         }
     }
 
@@ -125,37 +173,115 @@ public class BallMov : MonoBehaviour
     {
         if (isLaunched)
         {
-            rb.linearVelocity = rb.linearVelocity.normalized * speed;
+            if (godMode && transform.position.z < -8f)
+            {
+                Vector3 pos = transform.position;
+                pos.z = -7.6f;
+                transform.position = pos;
+
+                Vector3 vel = rb.linearVelocity;
+                // Inverteix la direcció Z per rebotar (com si fos una pala gegant)
+                vel.z = Mathf.Abs(vel.z); // assegura que va cap amunt
+                rb.linearVelocity = vel;
+            }
+
+
+            direccion = rb.linearVelocity.normalized;
+            direccion = EnforceMinRebound(direccion, 0.2f, 0.2f, 15f);
+            rb.linearVelocity = direccion * speed;
         }
     }
-
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Pala"))
+        if (isLaunched)
         {
-            if (isImant)
+            if (collision.gameObject.CompareTag("Brick"))
             {
-                Vector3 hitPoint = collision.GetContact(0).point;
-                imantOffset = hitPoint - palaTransform.position;
-                siguePala = true;
+                // Gestió de cooldown per evitar dobles col·lisions
+                if (Time.time - lastCollisionTime < collisionCooldown)
+                {
+                    // Massa aviat després de l'última col·lisió; ignora aquesta
+                    return;
+                }
 
+                lastCollisionTime = Time.time; // Actualitza el temps de l'última col·lisió
+
+                if (isPowerBall)
+                {
+                    //Destroy(collision.gameObject);
+                    rb.linearVelocity = direccion * speed;
+                    return;
+                }
+                else
+                {
+                    // Gestiona rebot normal
+                    ContactPoint contacto = collision.GetContact(0);
+                    Vector3 normal = contacto.normal;
+
+                    if (Mathf.Abs(normal.x) > Mathf.Abs(normal.z))
+                        direccion.x *= -1;
+                    else
+                        direccion.z *= -1;
+
+                    rb.linearVelocity = direccion * speed;
+
+                    //Destroy(collision.gameObject);
+                }
             }
-            else
+            else if (collision.gameObject.CompareTag("Pala"))
             {
-                // Rebot normal si no és Imant
-                Vector3 hit = collision.contacts[0].point;
-                Vector3 palaCenter = collision.transform.position;
-                float offset = hit.x - palaCenter.x;
-                float width = collision.collider.bounds.size.x;
-                float normalizedOffset = offset / (width / 2);
+                if (bounceSound != null && sfxMixerGroup != null)
+                {
+                    AudioSource.PlayClipAtPoint(bounceSound, transform.position, 1f);
+                }
 
-                Vector3 newDir = new Vector3(normalizedOffset, 0, 1).normalized;
-                rb.linearVelocity = newDir * speed;
+                if (isImant)
+                {
+                    Vector3 hitPoint = collision.GetContact(0).point;
+                    imantOffset = hitPoint - palaTransform.position;
+                    siguePala = true;
+                }
+                else
+                {
+                    Vector3 hit = collision.contacts[0].point;
+                    Vector3 palaCenter = collision.transform.position;
+                    float offset = hit.x - palaCenter.x;
+                    float width = collision.collider.bounds.size.x;
+                    float normalizedOffset = offset / (width / 2);
+
+                    Vector3 newDir = new Vector3(normalizedOffset, 0, 1).normalized;
+                    newDir = EnforceMinRebound(newDir, 0.2f, 0.2f, 0.6f);
+                    rb.linearVelocity = newDir * speed;
+                }
+            }
+            else if (collision.gameObject.CompareTag("Paret"))
+            {
+                Vector3 velocity = rb.linearVelocity;
+
+                if (wallSound != null && sfxMixerGroup != null)
+                {
+                    AudioSource.PlayClipAtPoint(wallSound, transform.position, 1f);
+                }
+
+                if (Mathf.Abs(velocity.z) < 1f)
+                {
+                    Vector3 hit = collision.contacts[0].point;
+                    Vector3 palaCenter = collision.transform.position;
+                    float offset = hit.x - palaCenter.x;
+                    float width = collision.collider.bounds.size.x;
+                    float normalizedOffset = offset / (width / 2);
+
+                    direccion = new Vector3(normalizedOffset, 0, 1).normalized;
+                    direccion = EnforceMinRebound(direccion, 0.2f, 0.2f, 15f);
+                    rb.linearVelocity = direccion * speed;
+                }
             }
         }
-
     }
+
+
+
 
     //Gestión del POWERBALL
     public void ActivatePowerBall()
@@ -168,23 +294,24 @@ public class BallMov : MonoBehaviour
             if (ball != null)
             {
                 ball.isPowerBall = true;
-                if (ball.powerBallMaterial != null)
-                    b.GetComponent<Renderer>().material = ball.powerBallMaterial;
+                Transform meshChild = b.transform.Find("default");
+                if (meshChild != null)
+                {
+                    Renderer rend = meshChild.GetComponent<Renderer>();
+                    if (rend != null && ball.powerBallMaterial != null)
+                    {
+                        rend.material = ball.powerBallMaterial;
+                    }
+                }
             }
-        }
-
-        // 🔁 Converteix bricks a triggers
-        GameObject[] bricks = GameObject.FindGameObjectsWithTag("Brick");
-        foreach (GameObject brick in bricks)
-        {
-            Collider col = brick.GetComponent<Collider>();
-            if (col != null)
-                col.isTrigger = true;
         }
     }
 
     public void DeactivatePowerBall()
     {
+
+        if (!isPowerBall) return;
+
         isPowerBall = false;
 
         if (powerBallCoroutine != null)
@@ -195,18 +322,13 @@ public class BallMov : MonoBehaviour
 
         if (normalMaterial != null)
         {
-            GetComponent<Renderer>().material = normalMaterial;
+            Renderer rend = transform.Find("default").GetComponent<Renderer>();
+            rend.material = normalMaterial;
         }
 
         // Restaura els bricks a col·lisions normals
-        GameObject[] bricks = GameObject.FindGameObjectsWithTag("Brick");
-        foreach (GameObject brick in bricks)
-        {
-            Collider col = brick.GetComponent<Collider>();
-            if (col != null)
-                col.isTrigger = false;
-        }
     }
+
 
 
     //Gestión del IMANT
@@ -223,9 +345,11 @@ public class BallMov : MonoBehaviour
 
     IEnumerator ImantDuration()
     {
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(10f);
         isImant = false;
     }
+
+    /*
 
     //Gestión del FASTBALL
     public void ActivateFastBall()
@@ -309,4 +433,44 @@ public class BallMov : MonoBehaviour
         speed = baseSpeed;
     }
 
+    */
+
+    public void ActivateFastBall()
+    {
+        if (rb == null)
+            rb = GetComponent<Rigidbody>();
+
+        if (direccion == Vector3.zero)
+            direccion = rb.linearVelocity.normalized;
+
+        speed = speed * 1.5f;
+        rb.linearVelocity = direccion * speed;
+    }
+
+
+    public void ActivateSlowBall()
+    {
+        if (rb == null)
+            rb = GetComponent<Rigidbody>();
+
+        if (direccion == Vector3.zero)
+            direccion = rb.linearVelocity.normalized;
+
+        speed = speed / 1.5f;
+        rb.linearVelocity = direccion * speed;
+    }
+
+    private Vector3 EnforceMinRebound(Vector3 dir, float minX, float minZ, float blendFactor)
+    {
+        Vector3 corrected = dir;
+
+        if (Mathf.Abs(corrected.z) < minZ)
+            corrected.z = minZ * Mathf.Sign(Random.Range(-1f, 1f));
+
+        if (Mathf.Abs(corrected.x) < minX)
+            corrected.x = minX * Mathf.Sign(Random.Range(-1f, 1f));
+
+        // Interpolació suau: només s'aplica una part del canvi
+        return Vector3.Slerp(dir, corrected.normalized, blendFactor).normalized;
+    }
 }
